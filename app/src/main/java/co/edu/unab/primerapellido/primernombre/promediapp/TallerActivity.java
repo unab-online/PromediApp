@@ -3,9 +3,11 @@ package co.edu.unab.primerapellido.primernombre.promediapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TallerActivity extends AppCompatActivity {
 
@@ -44,7 +46,36 @@ public class TallerActivity extends AppCompatActivity {
         editTextSustentacion = findViewById(R.id.editTextSustentacion);
         editTextAplicacion = findViewById(R.id.editTextAplicacion);
 
-        setTitle(R.string.titulo);
+        buttonCalcular = findViewById(R.id.buttonCalcular);
 
+        textViewResultado = findViewById(R.id.textViewResultado);
+
+        setTitle(R.string.titulo);
+    }
+
+    public void calcular(View vista){
+        double resultado, asis, traClas, traTa, par, asis2, traCla2, priEnt, segEnt, sus, app;
+        String vacio = "";
+
+        asis = Double.valueOf(editTextAsistencia1.getText().toString());
+        traClas = Double.valueOf(editTextTrabajoClase1.getText().toString());
+        traTa = Double.valueOf(editTextTrabajosTalleres.getText().toString());
+        par = Double.valueOf(editTextParcial.getText().toString());
+        asis2 = Double.valueOf(editTextAsistencia2.getText().toString());
+        traCla2 = Double.valueOf(editTextTrabajoClase2.getText().toString());
+        priEnt = Double.valueOf(editTextPrimerEntregable.getText().toString());
+        segEnt = Double.valueOf(editTextSegundoEntregable.getText().toString());
+        sus = Double.valueOf(editTextSustentacion.getText().toString());
+        app = Double.valueOf(editTextAplicacion.getText().toString());
+
+        if ( editTextAsistencia1.equals(false)){
+            Toast.makeText(getApplicationContext(),"complete todos los campos", Toast.LENGTH_LONG).show();
+        }else{
+
+            resultado = ((asis*0.1)+(traClas*0.3)+(traTa*0.3)+(par*0.3))*0.5+((asis2*0.1)+(traCla2*0.3)+(priEnt*0.15)+(segEnt*0.15)+(sus*0.15)+(app*0.15))*0.5;
+            textViewResultado.setText("Resultado: "+resultado);
+        }
+
+        
     }
 }
