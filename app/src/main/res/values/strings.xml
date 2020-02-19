@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Primer Taller - Sergio</string>
+    <string name="tv_titulo">PromediApp</string>
+    <string name="tv_corte1">Primer Corte (50%)</string>
+    <string name="edt_asistencia">Asistencia 10%</string>
+    <string name="edt_clase">Trabajo en clase 30%</string>
+    <string name="edt_talleres">Trabajos y Talleres 30%</string>
+    <string name="edt_parcial1">Parcial 30%</string>
+    <string name="tv_corte2">Segundo Corte (50%)</string>
+    <string name="tv_proyecto">Proyecto de Curso 60%</string>
+    <string name="edt_entrega1">Primer Entregable 15%</string>
+    <string name="edt_entrega2">Segundo Entregable 15%</string>
+    <string name="edt_sustetacion">Sustentación 15%</string>
+    <string name="edt_aplicacion">Aplicación 15%</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="edt_resultado">RESULTADO:</string>
+</resources>
+
