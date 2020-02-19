@@ -2,6 +2,7 @@ package co.edu.unab.vasquez.nodier.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,7 @@ private EditText txtTrabajoClase1, txtTrabajoClase2, txtTalleres;
 private EditText txtEntregable1, txtEntregable2, txtSustentacion;
 private EditText txtAplicacion;
 private Button btnCalcular;
-private TextView textresultado;
+private TextView txtresultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ private TextView textresultado;
         txtAplicacion = findViewById(R.id.edt_app);
 
         btnCalcular = findViewById(R.id.btn_calc);
+
+        txtresultado = findViewById(R.id.txt_resultado); //faltaba llamar este...
 
     }
 
@@ -75,12 +78,21 @@ private TextView textresultado;
         leer = txtAplicacion.getText().toString();
         aplicacion = Double.valueOf(leer);
 
+        if (asistencia1 >= 0 && trabClase1 >= 0 && talleres >= 0 && parcial >= 0 && asistencia2 >= 0 && trabClase2 >= 0 && entregable1 >=0 && entregable2 >= 0 && sustentacion >= 0 && aplicacion >= 0){
+            corte1 = (((asistencia1*0.1)+(trabClase1*0.3)+(talleres*0.3)+(parcial*0.3))*0.5);
+            corte2 = (((asistencia2*0.1)+(trabClase2*0.3)+(entregable1*0.15)+(entregable2*0.15)+(sustentacion*0.15)+(aplicacion*0.15))*0.5);
+            resultado = corte1+corte2;
+            //txtresultado.setText("El resultado es: "+ resultado);
 
-        corte1 = ((asistencia1*0.1)+(trabClase1*0.3)+(talleres*0.3)+(parcial*0.3))*0.5;
-        corte2 = ((asistencia2*0.1)+(trabClase2*0.3)+(entregable1*0.15)+(entregable2*0.15)+(sustentacion*0.15)+(aplicacion*0.15))*0.5;
-        resultado = corte1+corte2;
+            Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class );
+            startActivity(miIntencion);
 
-        textresultado.setText("El resultado es: "+ resultado);
+
+
+        }else{
+            Toast.makeText(getApplication(),"No se puede operar",Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 }
