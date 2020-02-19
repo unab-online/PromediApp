@@ -2,6 +2,7 @@ package co.edu.unab.saavedra.juan.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +24,6 @@ public class TallerActivity extends AppCompatActivity {
     private EditText edtSus;
     private EditText edtApp;
     private Button btnCalcular;
-    private TextView txtResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,6 @@ public class TallerActivity extends AppCompatActivity {
         edtSus = findViewById(R.id.edt_sus);
         edtApp = findViewById(R.id.edt_app);
         btnCalcular = findViewById(R.id.btn_calcular);
-        txtResultado = findViewById(R.id.txt_resultado);
         setTitle("Primer Taller - Juan Saavedra");
 
     }
@@ -55,7 +54,6 @@ public class TallerActivity extends AppCompatActivity {
         if (edtAsis1.getText().toString().isEmpty() || edtTrac1.getText().toString().isEmpty() || edtTrayt1.getText().toString().isEmpty() || edtPar1.getText().toString().isEmpty() || edtAsis2.getText().toString().isEmpty() ||
                 edtTrac2.getText().toString().isEmpty() || edtPrie.getText().toString().isEmpty() || edtSege.getText().toString().isEmpty() || edtSus.getText().toString().isEmpty() || edtApp.getText().toString().isEmpty()) {
             Toast.makeText(this, "Valores incorrectos, asegurese de llenar todos los campos", Toast.LENGTH_LONG).show();
-            txtResultado.setText("");
         } else {
             double notaAsistencia1 = Double.parseDouble(edtAsis1.getText().toString());
             double notaTrabajosClase1 = Double.parseDouble(edtTrac1.getText().toString());
@@ -80,7 +78,6 @@ public class TallerActivity extends AppCompatActivity {
                     notaAplicacion > 5.0 || notaAplicacion < 0.0) {
 
                 Toast.makeText(this, "Valores incorrectos, los valores deben estar entre 0.0 y 5.0", Toast.LENGTH_LONG).show();
-                txtResultado.setText("");
 
             } else {
                 double corte1 = 0;
@@ -97,7 +94,12 @@ public class TallerActivity extends AppCompatActivity {
                 corte2 += notaSustentacion * 0.15;
                 corte2 += notaAplicacion * 0.15;
 
-                txtResultado.setText(Double.toString((corte1 + corte2) / 2.0));
+                double resultado = (corte1+corte2)/2.0;
+
+                Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+                startActivity(miIntencion);
+
+
             }
         }
 
