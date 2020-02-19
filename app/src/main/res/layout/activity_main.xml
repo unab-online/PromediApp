@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
         android:layout_weight="1"
-        tools:src="@tools:sample/backgrounds/scenic[19]" />
+        app:srcCompat="@drawable/b3c95756dd945730a7c13ee2020d3878" />
 
     <TextView
         android:id="@+id/textView"
@@ -20,6 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/app_name"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimary"
         android:textDirection="firstStrongRtl"
         android:textIsSelectable="false" />
 
@@ -28,7 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/primerCorte" />
+        android:text="@string/primerCorte"
+        android:textColor="@color/colorPrimaryDark" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,7 +92,8 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="41dp"
-        android:text="@string/segundoCorte" />
+        android:text="@string/segundoCorte"
+        android:textColor="@color/colorPrimaryDark" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -123,7 +127,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/proyectoCusrso" />
+        android:text="@string/proyectoCusrso"
+        android:textColor="@color/colorPrimaryDark" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -193,6 +198,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/resultado" />
+        android:text="@string/resultado"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp" />
 
 </LinearLayout>

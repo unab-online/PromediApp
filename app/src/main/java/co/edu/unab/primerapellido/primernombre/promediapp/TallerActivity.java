@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TallerActivity extends AppCompatActivity {
+public class TallerActivity extends AppCompatActivity  {
 
     private EditText editTextAsistencia1;
     private EditText editTextTrabajoClase1;
@@ -33,6 +33,7 @@ public class TallerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         editTextAsistencia1 = findViewById(R.id.editTextAsistencia1);
         editTextTrabajoClase1 = findViewById(R.id.editTextTrabajoClase1);
         editTextTrabajosTalleres = findViewById(R.id.editTextTrabajosTalleres);
@@ -50,32 +51,43 @@ public class TallerActivity extends AppCompatActivity {
 
         textViewResultado = findViewById(R.id.textViewResultado);
 
-        setTitle(R.string.titulo);
-    }
+        buttonCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double resultado, asis, traClas, traTa, par, asis2, traCla2, priEnt, segEnt, sus, app;
 
-    public void calcular(View vista){
-        double resultado, asis, traClas, traTa, par, asis2, traCla2, priEnt, segEnt, sus, app;
-        String vacio = "";
+                if ( editTextAsistencia1.getText().toString().isEmpty()||
+                        editTextTrabajoClase1.getText().toString().isEmpty()||
+                        editTextTrabajosTalleres.getText().toString().isEmpty() ||
+                        editTextParcial.getText().toString().isEmpty()||
+                        editTextAsistencia2.getText().toString().isEmpty()||
+                        editTextTrabajoClase2.getText().toString().isEmpty()||
+                        editTextPrimerEntregable.getText().toString().isEmpty()||
+                        editTextSegundoEntregable.getText().toString().isEmpty()||
+                        editTextSustentacion.getText().toString().isEmpty()||
+                        editTextAplicacion.getText().toString().isEmpty()
+                ){
 
-        asis = Double.valueOf(editTextAsistencia1.getText().toString());
-        traClas = Double.valueOf(editTextTrabajoClase1.getText().toString());
-        traTa = Double.valueOf(editTextTrabajosTalleres.getText().toString());
-        par = Double.valueOf(editTextParcial.getText().toString());
-        asis2 = Double.valueOf(editTextAsistencia2.getText().toString());
-        traCla2 = Double.valueOf(editTextTrabajoClase2.getText().toString());
-        priEnt = Double.valueOf(editTextPrimerEntregable.getText().toString());
-        segEnt = Double.valueOf(editTextSegundoEntregable.getText().toString());
-        sus = Double.valueOf(editTextSustentacion.getText().toString());
-        app = Double.valueOf(editTextAplicacion.getText().toString());
+                    Toast.makeText(getApplicationContext(),"complete todos los campos", Toast.LENGTH_LONG).show();
+                    textViewResultado.setText("RESULTADO: ");
 
-        if ( editTextAsistencia1.equals(false)){
-            Toast.makeText(getApplicationContext(),"complete todos los campos", Toast.LENGTH_LONG).show();
-        }else{
+                }else{
+                    asis = Double.valueOf(editTextAsistencia1.getText().toString());
+                    traClas = Double.valueOf(editTextTrabajoClase1.getText().toString());
+                    traTa = Double.valueOf(editTextTrabajosTalleres.getText().toString());
+                    par = Double.valueOf(editTextParcial.getText().toString());
+                    asis2 = Double.valueOf(editTextAsistencia2.getText().toString());
+                    traCla2 = Double.valueOf(editTextTrabajoClase2.getText().toString());
+                    priEnt = Double.valueOf(editTextPrimerEntregable.getText().toString());
+                    segEnt = Double.valueOf(editTextSegundoEntregable.getText().toString());
+                    sus = Double.valueOf(editTextSustentacion.getText().toString());
+                    app = Double.valueOf(editTextAplicacion.getText().toString());
 
-            resultado = ((asis*0.1)+(traClas*0.3)+(traTa*0.3)+(par*0.3))*0.5+((asis2*0.1)+(traCla2*0.3)+(priEnt*0.15)+(segEnt*0.15)+(sus*0.15)+(app*0.15))*0.5;
-            textViewResultado.setText("Resultado: "+resultado);
-        }
+                    resultado = ((asis*0.1)+(traClas*0.3)+(traTa*0.3)+(par*0.3))*0.5+((asis2*0.1)+(traCla2*0.3)+(priEnt*0.15)+(segEnt*0.15)+(sus*0.15)+(app*0.15))*0.5;
+                    textViewResultado.setText("RESULTADO: "+resultado);
 
-        
+                }
+            }
+        });
     }
 }
