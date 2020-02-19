@@ -2,6 +2,7 @@ package co.edu.unab.leal.jakson.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -57,29 +58,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCalcular = findViewById(R.id.btn_calcular);
         textViewResultado = findViewById(R.id.textView_resultado);
 
+
+
         btnCalcular.setOnClickListener(this);
-
-
         btnCalcular.setOnClickListener(new View.OnClickListener() {
 
 
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(), "vamos a calcular", Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), "vamos a calcular", Toast.LENGTH_LONG).show();
 
                 String lectura;
                 double resultado, primerCorte, segundoCorte, proyecto;
 
-                if (editTextSegEntreg.equals(true) &&
-                        editTextSustentacion.equals(true) &&
-                        editTextAplicacion.equals(true) &&
-                        editTextPrimEntreg.equals(true) &&
-                        editTextTrabClaseSC.equals(true) &&
-                        editTextAsistSC.equals(true) &&
-                        editTextParcial.equals(true) &&
-                        editTextAsistPC.equals(true) &&
-                        editTextTrabClasePC.equals(true) &&
-                        editTextTrabTall.equals(true)
+                if (editTextSegEntreg.getText().toString().equals(true) &&
+                        editTextSustentacion.getText().toString().equals(true) &&
+                        editTextAplicacion.getText().toString().equals(true) &&
+                        editTextPrimEntreg.getText().toString().equals(true) &&
+                        editTextTrabClaseSC.getText().toString().equals(true) &&
+                        editTextAsistSC.getText().toString().equals(true) &&
+                        editTextParcial.getText().toString().equals(true) &&
+                        editTextAsistPC.getText().toString().equals(true) &&
+                        editTextTrabClasePC.getText().toString().equals(true) &&
+                        editTextTrabTall.getText().toString().equals(true)
 
                 ) {
 
@@ -128,7 +129,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     textViewResultado.setText("" + resultado);
                 } else {
-                    Toast.makeText(getBaseContext(), "Upss, llena todos los campos!", Toast.LENGTH_LONG).show();
+
+                    Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+                    startActivity(miIntencion);
+
+
+                    //Toast.makeText(getBaseContext(), "Upss, llena todos los campos!", Toast.LENGTH_LONG).show();
                 }
 
             }
