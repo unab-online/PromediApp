@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Primer Taller - Carlos</string>
+    <string name="name">PromediApp</string>
+    <string name="primer_corte">Primer Corte (50%)</string>
+    <string name="segundo_corte">Segundo Corte (50%)</string>
+    <string name="proyecto_curso">Proyecto de Curso (60%)</string>
+    <string name="asistencia">Asistencia (10%)</string>
+    <string name="trabajo_clase">Trabjo de clase (30%)</string>
+    <string name="trab_y_tall">Trabajos y Talleres (30%)</string>
+    <string name="parcial">Parcial (30%)</string>
+    <string name="primer_entregable">Primer Entregable (15%)</string>
+    <string name="segundo_entregable">Segundo Entregable (15%)</string>
+    <string name="sustentacion">Sustentacion (15%)</string>
+    <string name="aplicacion">Aplicacion (15%)</string>
+    <string name="calcular">Calcular</string>
+    <string name="resultado">Resultado</string>
+</resources>
