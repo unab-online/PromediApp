@@ -1,0 +1,20 @@
+<resources>
+    <string name="appname">Primer taller Jackeline</string>
+    <string name="ayuda_PrimerCorte">Primer corte 50%</string>
+    <string name="ayuda_Promedio">PromediApp</string>
+    <string name="ayuda_PrimerCorte_50">Primer corte 50%</string>
+    <string name="ayuda_Asistencia">Asistencia 10%</string>
+    <string name="ayuda_trabajoClase">Trabajo en clase 30%</string>
+    <string name="ayuda_TrabajosyTalleres">Trabajos y talleres 30%</string>
+    <string name="Parcial_30">Parcial 30%</string>
+    <string name="ayuda_SegundoCorte_50">Segundo Corte 50%</string>
+    <string name="ayuda_ProyectoCurso">Proyecto de curso 60%</string>
+    <string name="ayuda_PrimerEntregable">Primer Entregable 15%</string>
+    <string name="ayuda_SegundoEntregable">Segundo entregable 15%</string>
+    <string name="ayuda_Sustentacion">Sustentacion 15%</string>
+    <string name="ayuda_Aplicacion">Aolicacion 15%</string>
+    <string name="ayuda_Calcular">Calcular</string>
+    <string name="ayuda_Resultado">Resultado</string>
+
+
+</resources>
