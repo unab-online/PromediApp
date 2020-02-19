@@ -2,6 +2,7 @@ package co.edu.unab.melon.cristian.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -54,68 +55,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        double resultado, asisPC, TraClaPC, TraYTalPC, ParciPC, asisSC, TraClaSC, priPRC, segPRC, sustPRC, appPRC, cont;
+        double resultado, asisPC, TraClaPC, TraYTalPC, ParciPC, asisSC, TraClaSC, priPRC, segPRC, sustPRC, appPRC;
         String lectura;
 
-        cont =0;
+        if (edtPC_asis.getText().toString().isEmpty() || edtPC_TrabaClase.getText().toString().isEmpty() || edtPC_TraYtall.getText().toString().isEmpty() || edtPC_Parci.getText().toString().isEmpty() || edtSC_asis.getText().toString().isEmpty() || edtSC_TrabaClas.getText().toString().isEmpty() || edtPRC_pe.getText().toString().isEmpty() || edtPRC_se.getText().toString().isEmpty() || edtPRC_sust.getText().toString().isEmpty() || edtPRC_app.getText().toString().isEmpty()) {
+
+            Toast.makeText(getBaseContext(), "Llene todos los espacios bobo", Toast.LENGTH_LONG).show();
+
+        } else {
+
+
 // primer corte//
-        lectura = edtPC_asis.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        asisPC = Double.valueOf(lectura);
+            lectura = edtPC_asis.getText().toString();
+            asisPC = Double.valueOf(lectura);
 
-        lectura = edtPC_TrabaClase.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        TraClaPC = Double.valueOf(lectura);
+            lectura = edtPC_TrabaClase.getText().toString();
+            TraClaPC = Double.valueOf(lectura);
 
-        lectura = edtPC_TraYtall.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        TraYTalPC = Double.valueOf(lectura);
+            lectura = edtPC_TraYtall.getText().toString();
+            TraYTalPC = Double.valueOf(lectura);
 
-        lectura = edtPC_Parci.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        ParciPC = Double.valueOf(lectura);
-
-
+            lectura = edtPC_Parci.getText().toString();
+            ParciPC = Double.valueOf(lectura);
 
 
 // segundo corte//
-        lectura = edtSC_asis.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        asisSC = Double.valueOf(lectura);
+            lectura = edtSC_asis.getText().toString();
+            asisSC = Double.valueOf(lectura);
 
-        lectura = edtSC_TrabaClas.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        TraClaSC = Double.valueOf(lectura);
+            lectura = edtSC_TrabaClas.getText().toString();
+            TraClaSC = Double.valueOf(lectura);
 
-        // proyecto//
+            // proyecto//
 
-        lectura = edtPRC_pe.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        priPRC = Double.valueOf(lectura);
+            lectura = edtPRC_pe.getText().toString();
+            priPRC = Double.valueOf(lectura);
 
-        lectura = edtPRC_se.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        segPRC = Double.valueOf(lectura);
+            lectura = edtPRC_se.getText().toString();
+            segPRC = Double.valueOf(lectura);
 
-        lectura = edtPRC_sust.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        sustPRC = Double.valueOf(lectura);
+            lectura = edtPRC_sust.getText().toString();
+            sustPRC = Double.valueOf(lectura);
 
-        lectura = edtPRC_app.getText().toString();
-        if (lectura.isEmpty()){ cont++; }
-        appPRC = Double.valueOf(lectura);
-
-
-        if (cont >= 1  ) {
-
-            Toast.makeText(getBaseContext(), "Llene todos los espacios bobo", Toast.LENGTH_LONG).show();
-        } else {
+            lectura = edtPRC_app.getText().toString();
+            appPRC = Double.valueOf(lectura);
 
 
             resultado = (((asisPC * 0.1) + (TraClaPC * 0.3) + (TraYTalPC * 0.3) + (ParciPC * 0.3)) + ((asisSC * 0.1) + (TraClaSC * 0.3) + (priPRC * 0.15) + (segPRC * 0.15) + (sustPRC * 0.15) + (appPRC * 0.15))) / 2;
             Toast.makeText(this, "calculando...", Toast.LENGTH_SHORT).show();
             Resultadomostrar.setText("RESULTADO : " + resultado + "");
+
+            Intent intent = new Intent(getApplication() , ResultadoActivity.class);
+            startActivity(intent);
         }
+    }
 
     }
-}
+
