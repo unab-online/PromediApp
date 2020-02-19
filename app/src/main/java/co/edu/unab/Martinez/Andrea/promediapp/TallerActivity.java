@@ -2,6 +2,7 @@ package co.edu.unab.Martinez.Andrea.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,8 +43,6 @@ public class TallerActivity extends AppCompatActivity {
         inputapp=findViewById(R.id.input_app);
 
         btncalcular=findViewById(R.id.btn_calcular);
-
-        txtresult=findViewById(R.id.txt_result);
 
         btncalcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +91,9 @@ public class TallerActivity extends AppCompatActivity {
                     resultado21 = Double.valueOf(inputasist2.getText().toString()) * 0.1 + Double.valueOf(inputtrabClas2.getText().toString()) * 0.3;
                     resultado22 = Double.valueOf(inputprentregable.getText().toString()) * 0.15 + Double.valueOf(inputsegentregable.getText().toString()) * 0.15 +  Double.valueOf(inputapp.getText().toString()) * 0.15 +  Double.valueOf(inputsust.getText().toString()) * 0.15;
                     resultado = resultado1*0.5+((resultado21+resultado22)*0.5);
-                    txtresult.setText("Resultado: " + resultado);
+
+                    Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+                    startActivity(miIntencion);
                 }
 
             }
