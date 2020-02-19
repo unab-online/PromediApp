@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PromediApp</string>
+    <string name="name_page">Taller Primer Corte</string>
+
+    <string name="name_title">PromediApp</string>
+    <string name="name_PC">Primer Corte (50%)</string>
+    <string name="name_asistencia">Asistencia 10%</string>
+    <string name="name_trabajoEnClase">Trabajo En Clase 30%</string>
+    <string name="name_trabajoTalleres">Trabajos Y Talleres 30%</string>
+    <string name="name_parcial">parcial 30%</string>
+    <string name="name_SC">Segundo Corte (50%)</string>
+    <string name="name_proyecto">Proyecto de curso 60%</string>
+    <string name="name_primerEntrega">Primer Entregable 15%</string>
+    <string name="name_segunEntrega">Segundo Entregable 15%</string>
+    <string name="name_sustentacion">Sustentacion 15%</string>
+    <string name="name_aplicacion">Aplicacion 15%</string>
+    <string name="name_calcular">CALCULAR</string>
+    <string name="name_resultado">resultado: </string>
+
+</resources>
