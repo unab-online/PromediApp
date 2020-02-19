@@ -2,11 +2,15 @@ package co.edu.unab.gonzalez.carlos.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.EmptyStackException;
 
 public class TallerActivity extends AppCompatActivity {
     private EditText asis1;
@@ -40,55 +44,132 @@ public class TallerActivity extends AppCompatActivity {
         app = findViewById(R.id.app);
         btncalcular = findViewById(R.id.btncalcular);
         resultado = findViewById(R.id.res);
-
+        /*asis1.setText("");
+        trab1.setText("");
+        tyt1.setText("");
+        p1.setText("");
+        asis2.setText("");
+        trab2.setText("");
+        pentre.setText("");
+        sentre.setText("");
+        sus.setText("");
+        app.setText("");*/
     }
     public void calcular(View elemento){
-    double resultado1, resultado2, resultado3, resultadof, num1c1, num2c1, num3c1, num4c1, num1c2, num2c2, num1p, num2p, num3p, num4p;
+    double resultado1, resultado2, resultadof, num1c1, num2c1, num3c1, num4c1, num1c2, num2c2, num1p, num2p, num3p, num4p;
     String lectura;
-
+    int cont = 0;
+        //validacion con contador
         lectura = asis1.getText().toString();
-        num1c1 = Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
         lectura = trab1.getText().toString();
-        num2c1 = Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
         lectura = tyt1.getText().toString();
-        num3c1 = Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
         lectura = p1.getText().toString();
-        num4c1 = Double.parseDouble(lectura);
-
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
 
         lectura = asis2.getText().toString();
-        num1c2 = Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
         lectura = trab2.getText().toString();
-        num2c2 = Double.parseDouble(lectura);
-
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
 
         lectura = pentre.getText().toString();
-        num1p = Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
         lectura = sentre.getText().toString();
-        num2p= Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
         lectura = sus.getText().toString();
-        num3p = Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
         lectura = app.getText().toString();
-        num4p = Double.parseDouble(lectura);
+        if (lectura.isEmpty()){
+            cont++;
+        }
 
-        if (num1c1 && num2c1 && num3c1 && num4c1 && num1c2 &&  num2c2 && num1p && num2p && num3p && num4p != 0)
-        resultado1 = num1c1 + num2c1 + num3c1 + num4c1;
+        //fin validacion
+        //comprobacion y aplicacion
+        if (cont == 0) {
 
-        resultado2 = num1c2 + num2c2;
+            lectura = asis1.getText().toString();
+            num1c1 = Double.parseDouble(lectura);
 
-        resultado3 = num1p + num2p + num3p + num4p;
+            lectura = trab1.getText().toString();
+            num2c1 = Double.parseDouble(lectura);
 
-        resultadof = resultado1 + resultado2 + resultado3;
+            lectura = tyt1.getText().toString();
+            num3c1 = Double.parseDouble(lectura);
 
-        resultado.setText(""+resultadof+"");
-    }
+
+            lectura = p1.getText().toString();
+            num4c1 = Double.parseDouble(lectura);
+
+
+            lectura = asis2.getText().toString();
+            num1c2 = Double.parseDouble(lectura);
+
+
+            lectura = trab2.getText().toString();
+            num2c2 = Double.parseDouble(lectura);
+
+
+            lectura = pentre.getText().toString();
+            num1p = Double.parseDouble(lectura);
+
+
+            lectura = sentre.getText().toString();
+            num2p = Double.parseDouble(lectura);
+
+
+            lectura = sus.getText().toString();
+            num3p = Double.parseDouble(lectura);
+
+
+            lectura = app.getText().toString();
+            num4p = Double.parseDouble(lectura);
+
+                resultado1 = ((num1c1*0.1) + (num2c1*0.3) + (num3c1*0.3) + (num4c1*0.3))*0.5;
+
+                resultado2 = ((num1c2 * 0.1) + (num2c2 * 0.3) + (num1p * 0.15) + (num2p * 0.15) + (num3p * 0.15) + (num4p * 0.15)) * 0.5;
+
+                resultadof = resultado1 + resultado2;
+                resultado.setText(""+resultadof+"");
+            Intent miIntencion = new Intent(this, ResultadoActivity.class);
+            //Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+            startActivity(miIntencion);
+            }
+            else {
+                Toast.makeText(getBaseContext(),"Hay campos vacios",Toast.LENGTH_LONG).show();
+            }
+        }
+
+
+
+
+
 }
