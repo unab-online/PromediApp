@@ -125,24 +125,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCorte2" />
 
-    <TextView
-        android:id="@+id/tvProyecto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/tv_proyecto"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtAsistencia2" />
-
     <EditText
         android:id="@+id/edtEntregable2"
         android:layout_width="163dp"
         android:layout_height="49dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="@string/edt_entrega2"
         android:inputType="numberDecimal"
@@ -151,26 +139,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProyecto" />
 
-    <EditText
-        android:id="@+id/edtAplicacion"
-        android:layout_width="140dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:hint="@string/edt_aplicacion"
-        android:inputType="numberDecimal"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEntregable2" />
+    <TextView
+        android:id="@+id/tvProyecto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tv_proyecto"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAsistencia2" />
 
     <EditText
         android:id="@+id/edtEntregable1"
         android:layout_width="161dp"
         android:layout_height="45dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/edt_entrega1"
         android:inputType="numberDecimal"
@@ -179,34 +165,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProyecto" />
 
-    <TextView
-        android:id="@+id/tvResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/edt_resultado"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
-
-    <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="8dp"
-        android:onClick="calcular"
-        android:text="@string/btn_calcular"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtAplicacion" />
-
     <EditText
         android:id="@+id/edtSustentacion"
         android:layout_width="147dp"
         android:layout_height="44dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="48dp"
         android:ems="10"
         android:hint="@string/edt_sustetacion"
         android:inputType="numberDecimal"
@@ -214,6 +177,30 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtEntregable1" />
+
+    <EditText
+        android:id="@+id/edtAplicacion"
+        android:layout_width="140dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:hint="@string/edt_aplicacion"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEntregable2" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="24dp"
+        android:onClick="calcular"
+        android:text="@string/btn_calcular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAplicacion" />
 
     <EditText
         android:id="@+id/edt_asistencia1"

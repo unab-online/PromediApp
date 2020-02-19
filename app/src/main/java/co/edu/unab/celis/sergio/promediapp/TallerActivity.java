@@ -2,6 +2,7 @@ package co.edu.unab.celis.sergio.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +22,6 @@ public class TallerActivity extends AppCompatActivity {
     private EditText edtEntregable2;
     private EditText edtSustentación;
     private EditText edtAplicacion;
-    private TextView tvResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class TallerActivity extends AppCompatActivity {
         edtEntregable2 = findViewById(R.id.edtEntregable2);
         edtAplicacion = findViewById(R.id.edtAplicacion);
         edtSustentación = findViewById(R.id.edtSustentacion);
-        tvResultado = findViewById(R.id.tvResultado);
+
     }
 
     public void calcular(View elemento){
@@ -74,7 +74,8 @@ public class TallerActivity extends AppCompatActivity {
 
             resultado = primerCorte + segundoCorte;
 
-            tvResultado.setText("RESULTADO: "+resultado);
+            Intent mostrarResultado = new Intent(getApplication(), ResultadoActivity.class);
+            startActivity(mostrarResultado);
 
             Toast.makeText(this, "Calculando Promedio",Toast.LENGTH_LONG).show();
         }
