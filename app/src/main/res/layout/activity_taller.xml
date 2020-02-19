@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imagenTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/calculo" />
+
+    <TextView
+        android:id="@+id/textPromedioApp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/ayuda_promedio"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenTitulo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/ayuda_primercorte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPromedioApp" />
+
+    <EditText
+        android:id="@+id/textasistenciaP"
+        android:layout_width="156dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/ayuda_asistencia"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/texttrabajoclaseP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/texttrabajoclaseP"
+        android:layout_width="166dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ayuda_trabajoclase"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textasistenciaP"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/texttrabajotalleresclaseP"
+        android:layout_width="156dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:hint="@string/ayuda_trabajotalleres"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/textparcialP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textasistenciaP" />
+
+    <EditText
+        android:id="@+id/textparcialP"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ayuda_parcial"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/texttrabajotalleresclaseP"
+        app:layout_constraintTop_toBottomOf="@+id/texttrabajoclaseP" />
+
+    <TextView
+        android:id="@+id/textsegundocorte"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/ayuda_segundocorte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texttrabajotalleresclaseP" />
+
+    <EditText
+        android:id="@+id/textasistenciaS"
+        android:layout_width="154dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/ayuda_asistencia"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/texttrabajoclaseS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textsegundocorte" />
+
+    <EditText
+        android:id="@+id/texttrabajoclaseS"
+        android:layout_width="169dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ayuda_trabajoclase"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textasistenciaS"
+        app:layout_constraintTop_toBottomOf="@+id/textsegundocorte" />
+
+    <TextView
+        android:id="@+id/textproyectocurso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/ayuda_proyectocurso"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textasistenciaS" />
+
+    <EditText
+        android:id="@+id/textprimerentregable"
+        android:layout_width="160dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/ayuda_primerentregable"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/textsegundoentregable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textproyectocurso" />
+
+    <EditText
+        android:id="@+id/textsegundoentregable"
+        android:layout_width="170dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ayuda_segundoentregable"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textprimerentregable"
+        app:layout_constraintTop_toBottomOf="@+id/textproyectocurso" />
+
+    <EditText
+        android:id="@+id/textsustentacion"
+        android:layout_width="160dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="@string/ayuda_sustentacion"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/textaplicacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textprimerentregable" />
+
+    <EditText
+        android:id="@+id/textaplicacion"
+        android:layout_width="172dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ayuda_aplicacion"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textsustentacion"
+        app:layout_constraintTop_toBottomOf="@+id/textsegundoentregable" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/ayuda_calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textaplicacion" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/ayuda_calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
