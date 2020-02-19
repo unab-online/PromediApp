@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:visibility="visible"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imagenPromedio"
+        android:layout_width="172dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077"
+        app:srcCompat="@drawable/calculation" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="154dp"
+        android:layout_height="31dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#2196F3"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="235dp"
+        android:layout_height="40dp"
+        android:text="@string/textoPrimerCorte"
+        android:textColor="#F44336"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="235dp"
+        android:layout_height="40dp"
+        android:text="@string/textoSegundoCorte"
+        android:textColor="#F44336"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="387dp"
+        android:layout_height="59dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.456">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/asistenciaCorteUno"
+                style="@android:style/Widget.Material.Light.EditText"
+                android:layout_width="168dp"
+                android:layout_height="43dp"
+                android:backgroundTint="@color/colorAccent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/asistencia"
+                android:inputType="numberDecimal"
+                android:textColorHint="#2196F3" />
+
+            <EditText
+                android:id="@+id/trabajoEnClaseCorteUno"
+                style="@android:style/Widget.Material.Light.EditText"
+                android:layout_width="179dp"
+                android:layout_height="52dp"
+                android:backgroundTint="@color/colorAccent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/trabajosClase"
+                android:inputType="numberDecimal"
+                android:textColorHint="#2196F3" />
+
+            <EditText
+                android:id="@+id/trabajosYTalleres"
+                style="@android:style/Widget.Material.Light.EditText"
+                android:layout_width="200dp"
+                android:layout_height="52dp"
+                android:backgroundTint="@color/colorAccent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/trabajosYTalleres"
+                android:inputType="numberDecimal"
+                android:textColorHint="#2196F3" />
+
+            <EditText
+                android:id="@+id/parcial"
+                style="@android:style/Widget.Material.Light.EditText"
+                android:layout_width="168dp"
+                android:layout_height="52dp"
+                android:backgroundTint="@color/colorAccent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/parcial"
+
+                android:inputType="numberDecimal"
+                android:textColorHint="#2196F3" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="392dp"
+        android:layout_height="201dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/asistenciaCorteDos"
+
+                    style="@android:style/Widget.Material.Light.EditText"
+
+                    android:layout_width="168dp"
+
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorAccent"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/asistencia"
+
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#2196F3" />
+
+                <EditText
+                    android:id="@+id/trabajoenClaseCorteDos"
+                    style="@android:style/Widget.Material.Light.EditText"
+                    android:layout_width="168dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorAccent"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/trabajosClase"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#2196F3" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textcortedos"
+                android:layout_width="376dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/proyectoCurso"
+                android:textColor="#F44336"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/primerEntregable"
+
+                    style="@android:style/Widget.Material.Light.EditText"
+                    android:layout_width="168dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorAccent"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/primerEntregable"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#2196F3" />
+
+                <EditText
+                    android:id="@+id/segundoEntregable"
+                    style="@android:style/Widget.Material.Light.EditText"
+                    android:layout_width="168dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorAccent"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/segundoEntregable"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#2196F3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/sustentacion"
+                    style="@android:style/Widget.Material.Light.EditText"
+                    android:layout_width="168dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorAccent"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/sustentacion"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#2196F3" />
+
+                <EditText
+                    android:id="@+id/aplicacion"
+                    style="@android:style/Widget.Material.Light.EditText"
+                    android:layout_width="168dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorAccent"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/aplicacinn"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#2196F3" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnCalcular"
+        style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="Calcular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
