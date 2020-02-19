@@ -1,6 +1,8 @@
 package co.edu.unab.toloza.cesar.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +16,6 @@ public class TallerActivity extends AppCompatActivity {
     private EditText corte1Asistencia, corte1TrabajoClase, corte1TrabajoTalleres, corte1Parcial,
             corte2Asistencia, corte2TrabajoClase, corte2Entregable1, corte2Entregable2, corte2Sustentacion, corte2Aplicacion;
     private Button buttonCalcular;
-    private TextView textResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,6 @@ public class TallerActivity extends AppCompatActivity {
         corte2Sustentacion = findViewById(R.id.corte2_sustentacion15);
         corte2Aplicacion = findViewById(R.id.corte2_aplicacion15);
         buttonCalcular = findViewById(R.id.button_calcular);
-        textResultado = findViewById(R.id.text_resultado);
 
         buttonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +51,9 @@ public class TallerActivity extends AppCompatActivity {
                             (getNumber(corte2Entregable2)*0.15)+(getNumber(corte2Sustentacion)*0.15)+(getNumber(corte2Aplicacion)*0.15);
                     Log.d("TEST","Corte 2 " + corte2);
                     double resultado = (corte1*0.5)+(corte2*0.5);
-                    textResultado.setText("RESULTADO: " + resultado);
+
+                    Intent intentResultado = new Intent(getApplication(), ResultadoActivity.class);
+                    startActivity(intentResultado);
                 }else {
                     Toast.makeText(getBaseContext(), "Error: Falta llenar los campos", Toast.LENGTH_SHORT).show();
                 }
