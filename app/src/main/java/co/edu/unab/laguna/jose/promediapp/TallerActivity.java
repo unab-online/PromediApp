@@ -2,6 +2,7 @@ package co.edu.unab.laguna.jose.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,7 @@ public class TallerActivity extends AppCompatActivity implements View.OnClickLis
     private EditText txtEntrega2;
     private EditText txtSustentar;
     private EditText txtAplicar;
-    private TextView txtResultado;
+
 
 
     @Override
@@ -38,12 +39,10 @@ public class TallerActivity extends AppCompatActivity implements View.OnClickLis
         txtEntrega1 = findViewById(R.id.txtEntrega1);
         txtEntrega2 = findViewById(R.id.txtEntrega2);
         txtParcial = findViewById(R.id.txtParcial);
-        txtResultado = findViewById(R.id.txtResultado);
         txtSustentar = findViewById(R.id.txtSustentar);
         txtTalleres = findViewById(R.id.txtTalleres);
         txtTrabajos1 = findViewById(R.id.txtTrabajos1);
         txtTrabajos2 = findViewById(R.id.txtTrabajos2);
-
 
         btnCalcular.setOnClickListener(this);
     }
@@ -139,7 +138,9 @@ public class TallerActivity extends AppCompatActivity implements View.OnClickLis
             promedio = (Primer_corte + Segundo_corte) / 2;
             resultado = promedio;
 
-            txtResultado.setText("Su nota es: " + resultado);
+            Intent PasarPantalla = new Intent(getApplication(), ResultadoActivity.class);
+            startActivity(PasarPantalla);
+
         }
 
     }
