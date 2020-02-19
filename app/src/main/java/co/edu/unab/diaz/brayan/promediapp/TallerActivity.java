@@ -2,6 +2,7 @@ package co.edu.unab.diaz.brayan.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,11 +35,10 @@ public class TallerActivity extends AppCompatActivity {
         edt9 = findViewById(R.id.edt_9);
         edt10 = findViewById(R.id.edt_10);
         btncal = findViewById(R.id.btn_cal);
-        txtresult = findViewById(R.id.txt_result);
     }
 
     public void calcular(View v){
-        double resultado,num1,num2,num3,num4,num5,num6,num7,num8,num9,num10;
+        double num1,num2,num3,num4,num5,num6,num7,num8,num9,num10;
         String lectura;
         boolean c = true;
 
@@ -79,8 +79,8 @@ public class TallerActivity extends AppCompatActivity {
         verificar(num,c);
         if(c==true){
             Toast.makeText(getApplicationContext(),"Espacios rellenados.",Toast.LENGTH_LONG).show();
-            resultado = ((num1*0.1+num2*0.3+num3*0.3+num4*0.3)*0.5)+(num5*0.1+num6*0.3+((num7*0.15+num8*0.15+num9*0.15+num10*0.15)*0.6));
-            txtresult.setText("Promedio = "+resultado);
+            Intent miIntencion = new Intent(getApplicationContext(),ResultadoActivity.class);
+            startActivity(miIntencion);
         }else{
             Toast.makeText(getApplicationContext(),"Rellene todos los espacios.",Toast.LENGTH_LONG).show();
             txtresult.setText("Null");
@@ -93,6 +93,7 @@ public class TallerActivity extends AppCompatActivity {
         for(int i=0; i<num.size(); i++){
             if(num.get(i).equals(null)){
                 c=false;
+                num.add(i,1.0);
             }
         }
     }
