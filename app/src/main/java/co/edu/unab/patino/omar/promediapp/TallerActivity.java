@@ -2,6 +2,7 @@ package co.edu.unab.patino.omar.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -89,6 +90,8 @@ public class TallerActivity extends AppCompatActivity implements View.OnClickLis
                 Resultado.setText("Resultado: " + resultadot);
                 Toast.makeText(getBaseContext(), "Cargando...", Toast.LENGTH_LONG).show();
 
+                Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+                startActivity(miIntencion);
                 //
 
                 //
