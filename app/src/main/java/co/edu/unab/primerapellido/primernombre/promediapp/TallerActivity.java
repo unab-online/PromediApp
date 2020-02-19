@@ -2,6 +2,7 @@ package co.edu.unab.primerapellido.primernombre.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,8 +27,6 @@ public class TallerActivity extends AppCompatActivity  {
 
     private Button buttonCalcular;
 
-    private TextView textViewResultado;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +48,7 @@ public class TallerActivity extends AppCompatActivity  {
 
         buttonCalcular = findViewById(R.id.buttonCalcular);
 
-        textViewResultado = findViewById(R.id.textViewResultado);
+
 
         buttonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +68,6 @@ public class TallerActivity extends AppCompatActivity  {
                 ){
 
                     Toast.makeText(getApplicationContext(),"complete todos los campos", Toast.LENGTH_LONG).show();
-                    textViewResultado.setText("RESULTADO: ");
 
                 }else{
                     asis = Double.valueOf(editTextAsistencia1.getText().toString());
@@ -84,7 +82,10 @@ public class TallerActivity extends AppCompatActivity  {
                     app = Double.valueOf(editTextAplicacion.getText().toString());
 
                     resultado = ((asis*0.1)+(traClas*0.3)+(traTa*0.3)+(par*0.3))*0.5+((asis2*0.1)+(traCla2*0.3)+(priEnt*0.15)+(segEnt*0.15)+(sus*0.15)+(app*0.15))*0.5;
-                    textViewResultado.setText("RESULTADO: "+resultado);
+                    //textViewResultado.setText("RESULTADO: "+resultado);
+
+                    Intent miIntension = new Intent(getApplication(),ResultadoActivity.class); //esta la intension de ir a la otra actividad
+                    startActivity(miIntension); //haga la intension
 
                 }
             }
