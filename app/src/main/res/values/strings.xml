@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Primer Taller - Nodier Vasquez</string>
+    <string name="titulo">PromediApp</string>
+    <string name="primer_corte">Primer corte (50%)</string>
+    <string name="segundo_corte">Segundo corte (50%)</string>
+    <string name="asistencia">Asistencia 10%</string>
+    <string name="trabajo_clase">Trabajo en clase 30%</string>
+    <string name="trabajo_taller">Trabajos y talleres 30%</string>
+    <string name="parcial">Pacial 30%</string>
+    <string name="proyecto_curso">Proyecto del curso 60%</string>
+    <string name="prim_entregable">Primer entregable 15%</string>
+    <string name="seg_entregable">Segundo entregable 15%</string>
+    <string name="sustentacion">Sustectación 15%</string>
+    <string name="aplicacion">Aplicacion 15%</string>
+    <string name="calcular">Calcular</string>
+    <string name="resultado">Resultado</string>
+    <string name="calculando">Se está haciendo el cálculo de sus notas...</string>
+</resources>
