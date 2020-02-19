@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Primer Taller - Juan Saavedra</string>
+    <string name="titulo">PromediApp</string>
+    <string name="primer_corte">Primer Corte (50%)</string>
+    <string name="asistencia">Asistencia 10%</string>
+    <string name="trabajo_en_clase">Trabajo en Clase 30%</string>
+    <string name="trabajos_y_talleres">Trabajos y Talleres 30%</string>
+    <string name="parcial">Parcial 30%</string>
+    <string name="segundo_corte">Segundo Corte (50%)</string>
+    <string name="proyecto_de_curso">Proyecto de Curso 60%</string>
+    <string name="primer_entregable">Primer Entregable 15%</string>
+    <string name="segundo_entregable">Segundo Entregable 15%</string>
+    <string name="sustentacion">Sustentación 15%</string>
+    <string name="aplicacion">Aplicación 15%</string>
+    <string name="calcular">Calcular</string>
+    <string name="resultado">RESULTADO</string>
+</resources>
