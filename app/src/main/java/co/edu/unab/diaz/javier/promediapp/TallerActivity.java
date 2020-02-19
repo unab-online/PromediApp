@@ -13,7 +13,7 @@ public class TallerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taller);
 
-        edtNum1 = findViewById(R.id.editText);
+        edtNum1 = findViewById(R.id.trabajoclase1);
         edtNum1.setText("0");
 
         Log.d(tag, "ESTADO", msg, "Creando Actividad...");
