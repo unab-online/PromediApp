@@ -1,0 +1,19 @@
+<resources>
+    <string name="primer_taller_jose">Taller Primer Corte</string>
+    <string name="promediapp">PromediApp</string>
+    <string name="primer_corte">Primer Corte (50%)</string>
+    <string name="segundo_corte">Segundo Corte (50%)</string>
+    <string name="proyectos">Proyecto de Curso 60%</string>
+    <string name="boton">Calcular</string>
+    <string name="resultado">RESULTADO</string>
+    <string name="asistencia">Asistencia 10%</string>
+    <string name="trabajos">Trabajos en clase 30%</string>
+    <string name="trabajos_talleres">Trabajos y Talleres 30%</string>
+    <string name="parcial">Parcial 30%</string>
+    <string name="primera">Primer Entregable 15%</string>
+    <string name="segunda">Segundo Entregable 15%</string>
+    <string name="sustentacion">Sustentación 15%</string>
+    <string name="aplicacion">Aplicación 15%</string>
+
+
+</resources>
