@@ -116,51 +116,22 @@ public class TallerActivity extends AppCompatActivity {
         //comprobacion y aplicacion
         if (cont == 0) {
 
-            lectura = asis1.getText().toString();
-            num1c1 = Double.parseDouble(lectura);
-
-            lectura = trab1.getText().toString();
-            num2c1 = Double.parseDouble(lectura);
-
-            lectura = tyt1.getText().toString();
-            num3c1 = Double.parseDouble(lectura);
-
-
-            lectura = p1.getText().toString();
-            num4c1 = Double.parseDouble(lectura);
-
-
-            lectura = asis2.getText().toString();
-            num1c2 = Double.parseDouble(lectura);
-
-
-            lectura = trab2.getText().toString();
-            num2c2 = Double.parseDouble(lectura);
-
-
-            lectura = pentre.getText().toString();
-            num1p = Double.parseDouble(lectura);
-
-
-            lectura = sentre.getText().toString();
-            num2p = Double.parseDouble(lectura);
-
-
-            lectura = sus.getText().toString();
-            num3p = Double.parseDouble(lectura);
-
-
-            lectura = app.getText().toString();
-            num4p = Double.parseDouble(lectura);
-
-                resultado1 = ((num1c1*0.1) + (num2c1*0.3) + (num3c1*0.3) + (num4c1*0.3))*0.5;
-
-                resultado2 = ((num1c2 * 0.1) + (num2c2 * 0.3) + (num1p * 0.15) + (num2p * 0.15) + (num3p * 0.15) + (num4p * 0.15)) * 0.5;
-
-                resultadof = resultado1 + resultado2;
-                resultado.setText(""+resultadof+"");
-            Intent miIntencion = new Intent(this, ResultadoActivity.class);
-            //Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+            Definitiva miDefinitiva = new Definitiva();
+            miDefinitiva.setAsistencia1(Double.valueOf(asis1.getText().toString()));
+            miDefinitiva.setTalleres(Double.parseDouble(trab1.getText().toString()));
+            miDefinitiva.setTrabajos1((Double.valueOf(trab1.getText().toString())));
+            miDefinitiva.setParcial(Double.parseDouble(p1.getText().toString()));
+            miDefinitiva.setAsistencia2((Double.valueOf(asis2.getText().toString())));
+            miDefinitiva.setTrabajos2((Double.parseDouble(trab2.getText().toString())));
+            miDefinitiva.setEntregable1(Double.parseDouble(pentre.getText().toString()));
+            miDefinitiva.setEntregable2(Double.valueOf(sentre.getText().toString()));
+            miDefinitiva.setSustentacion(Double.parseDouble(sus.getText().toString()));
+            miDefinitiva.setAplicacion(Double.valueOf(app.getText().toString()));
+            
+            //Intent miIntencion = new Intent(this, ResultadoActivity.class);
+            Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+            miIntencion.putExtra("resultado", miDefinitiva.getDefinitiva());
+            miIntencion.putExtra("titulo", "Resultado final");
             startActivity(miIntencion);
             }
             else {
