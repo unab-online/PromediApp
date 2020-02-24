@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
     <EditText
-        android:id="@+id/trabajoclase1"
+        android:id="@+id/asistencia1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -60,13 +60,13 @@
         android:text="@string/asistencia"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintEnd_toStartOf="@+id/trabajoclase1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/primercorte" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/trabajoclase1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -78,7 +78,7 @@
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/trabajoclase1"
+        app:layout_constraintStart_toEndOf="@+id/asistencia1"
         app:layout_constraintTop_toBottomOf="@+id/primercorte" />
 
     <EditText
@@ -95,7 +95,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/parcial"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trabajoclase1" />
+        app:layout_constraintTop_toBottomOf="@+id/asistencia1" />
 
     <EditText
         android:id="@+id/parcial"
@@ -112,10 +112,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toEndOf="@+id/trabajostalleres"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/trabajoclase1" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/segundocorte"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -129,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/trabajostalleres" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/asistencia2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -140,13 +140,13 @@
         android:text="@string/asistencia"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText6"
+        app:layout_constraintEnd_toStartOf="@+id/trabajoclase2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/segundocorte" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/trabajoclase2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -158,11 +158,11 @@
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/asistencia2"
+        app:layout_constraintTop_toBottomOf="@+id/segundocorte" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/proyectocurso"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -173,10 +173,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/asistencia2" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/primerentregable"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -187,12 +187,12 @@
         android:text="@string/primerEntregable"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText8"
+        app:layout_constraintEnd_toStartOf="@+id/segundoentregable"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/proyectocurso" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/segundoentregable"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -204,11 +204,11 @@
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText7"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/primerentregable"
+        app:layout_constraintTop_toBottomOf="@+id/proyectocurso" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/sustentacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -219,12 +219,12 @@
         android:text="@string/sustentacion"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText10"
+        app:layout_constraintEnd_toStartOf="@+id/aplicacion"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+        app:layout_constraintTop_toBottomOf="@+id/primerentregable" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/aplicacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -236,19 +236,19 @@
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText9"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        app:layout_constraintStart_toEndOf="@+id/sustentacion"
+        app:layout_constraintTop_toBottomOf="@+id/segundoentregable" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/calcular"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
-        android:text="Button"
+        android:text="@string/calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText9" />
+        app:layout_constraintTop_toBottomOf="@+id/sustentacion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
