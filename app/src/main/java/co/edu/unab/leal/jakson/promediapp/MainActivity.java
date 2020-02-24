@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button btnCalcular;
     private TextView textViewResultado;
+
+    CalcularDefinitiva definitivaObj = new CalcularDefinitiva();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +83,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     String lectura;
 
+                    definitivaObj.setAsistenciaPC(Double.valueOf(editTextAsistPC.getText().toString()));
+                    definitivaObj.setTrabajoClasePC(Double.valueOf(editTextTrabClasePC.getText().toString()));
+                    definitivaObj.setTrabajosTalleres(Double.valueOf(editTextTrabTall.getText().toString()));
+                    definitivaObj.setTrabajosTalleres(Double.valueOf(editTextParcial.getText().toString()));
+
+                    
+/*
                     //primer corte ↓↓↓↓↓↓↓
                     double asistenciaPc, trabajoPc, tallerPc, parcial;
                     lectura = editTextAsistPC.getText().toString();
@@ -126,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     resultado = primerCorte + (segundoCorte + proyecto) * 0.5;
 
                     //textViewResultado.setText("" + resultado);
-
+*/
                     Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
                     miIntencion.putExtra("data", resultado);
                     miIntencion.putExtra("titulo", "resultado final");
