@@ -1,5 +1,7 @@
 package co.edu.unab.leal.jakson.promediapp;
 
+import android.util.Log;
+
 public class CalcularDefinitiva {
 
     private double asistenciaPC, trabajoClasePC, trabajosTalleres, parcial;
@@ -87,14 +89,13 @@ public class CalcularDefinitiva {
         this.app = app;
     }
 
-    public double primerCorte(){
-        double aux = this.asistenciaPC*0.1 + this.trabajoClasePC*0.3 + this.trabajosTalleres*0.3 + this.parcial*0.3;
-        return aux*0.5;
+    public double primerCorte() {
+        double aux = (this.asistenciaPC * 0.1) + (this.trabajoClasePC * 0.3) + (this.trabajosTalleres * 0.3) + (this.parcial * 0.3);
+        return aux * 0.5;
     }
 
-    public double SegundoCorte(){
-        double aux40 = (this.asistenciaSC*0.1 + this.trabajoClaseSC*0.3)*0.4;
-        double aux60 = (this.primerEntrega*0.15 + this.segundaEntrega*0.15 + this.sustentacion*0.15 + this.app*0.15)*0.6;
-        return (aux40 + aux60)*0.5;
+    public double segundoCorte() {
+        double aux = (this.asistenciaSC * 0.1 + this.trabajoClaseSC * 0.3 + this.primerEntrega * 0.15 + this.segundaEntrega * 0.15 + this.sustentacion * 0.15 + this.app * 0.15);
+        return aux * 0.5;
     }
 }

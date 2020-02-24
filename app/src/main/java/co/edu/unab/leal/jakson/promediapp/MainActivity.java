@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -64,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             public void onClick(View v) {
 
-                // Toast.makeText(getApplicationContext(), "vamos a calcular", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "vamos a calcular", Toast.LENGTH_LONG).show();
 
-                double resultado = 0.0, primerCorte, segundoCorte, proyecto;
+                double resultado;
 
                 if (!editTextSegEntreg.getText().toString().equals("") &&
                         !editTextSustentacion.getText().toString().equals("") &&
@@ -80,61 +81,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         !editTextTrabTall.getText().toString().equals("")
 
                 ) {
-
-                    String lectura;
-
+                    //primer corte ↓↓↓↓↓↓↓
                     definitivaObj.setAsistenciaPC(Double.valueOf(editTextAsistPC.getText().toString()));
                     definitivaObj.setTrabajoClasePC(Double.valueOf(editTextTrabClasePC.getText().toString()));
                     definitivaObj.setTrabajosTalleres(Double.valueOf(editTextTrabTall.getText().toString()));
-                    definitivaObj.setTrabajosTalleres(Double.valueOf(editTextParcial.getText().toString()));
-
-                    
-/*
-                    //primer corte ↓↓↓↓↓↓↓
-                    double asistenciaPc, trabajoPc, tallerPc, parcial;
-                    lectura = editTextAsistPC.getText().toString();
-                    asistenciaPc = Double.valueOf(lectura) * 0.1;
-                    lectura = editTextTrabClasePC.getText().toString();
-                    trabajoPc = Double.valueOf(lectura) * 0.3;
-                    lectura = editTextTrabTall.getText().toString();
-                    tallerPc = Double.valueOf(lectura) * 0.3;
-                    lectura = editTextParcial.getText().toString();
-                    parcial = Double.valueOf(lectura) * 0.3;
-
-                    primerCorte = (asistenciaPc + trabajoPc + tallerPc + parcial) * 0.5;
-
-                    //Log.d("msj", "primer corte:"+ primerCorte);
+                    definitivaObj.setParcial(Double.valueOf(editTextParcial.getText().toString()));
 
                     //segundo corte ↓↓↓↓↓↓↓
-                    double asistenciaSc, trabajoSc;
-                    lectura = editTextAsistSC.getText().toString();
-                    asistenciaSc = Double.valueOf(lectura) * 0.1;
-                    lectura = editTextTrabClaseSC.getText().toString();
-                    trabajoSc = Double.valueOf(lectura) * 0.3;
-
-                    segundoCorte = (asistenciaSc + trabajoSc);
-
-                    //Log.d("msj", "segundo corte:"+ segundoCorte);
-
+                    definitivaObj.setAsistenciaSC(Double.valueOf(editTextAsistSC.getText().toString()));
+                    definitivaObj.setTrabajoClaseSC(Double.valueOf(editTextTrabClaseSC.getText().toString()));
                     //proyecto de curso ↓↓↓↓↓↓↓
-                    double pEntrega, sEntrega, sust, apli;
-                    lectura = editTextPrimEntreg.getText().toString();
-                    pEntrega = Double.valueOf(lectura) * 0.15;
-                    lectura = editTextSegEntreg.getText().toString();
-                    sEntrega = Double.valueOf(lectura) * 0.15;
-                    lectura = editTextSustentacion.getText().toString();
-                    sust = Double.valueOf(lectura) * 0.15;
-                    lectura = editTextAplicacion.getText().toString();
-                    apli = Double.valueOf(lectura) * 0.15;
+                    definitivaObj.setPrimerEntrega(Double.valueOf(editTextPrimEntreg.getText().toString()));
+                    definitivaObj.setSegundaEntrega(Double.valueOf(editTextSegEntreg.getText().toString()));
+                    definitivaObj.setSustentacion((Double.valueOf(editTextSustentacion.getText().toString())));
+                    definitivaObj.setApp(Double.valueOf(editTextAplicacion.getText().toString()));
 
-                    proyecto = (pEntrega + sEntrega + sust + apli);
+                    resultado = definitivaObj.primerCorte() + definitivaObj.segundoCorte();
 
-                    //Log.d("msj", "proyecto corte:"+ proyecto);
-
-                    resultado = primerCorte + (segundoCorte + proyecto) * 0.5;
-
-                    //textViewResultado.setText("" + resultado);
-*/
                     Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
                     miIntencion.putExtra("data", resultado);
                     miIntencion.putExtra("titulo", "resultado final");
