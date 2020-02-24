@@ -2,6 +2,7 @@ package co.edu.unab.parra.cristian.promediapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText entregable2 ;
     private EditText sustentacion;
     private EditText aplicacion ;
-    private TextView resultado;
 
 
     @Override
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         entregable2= (EditText)findViewById(R.id.et_e2);
         sustentacion= (EditText)findViewById(R.id.et_sust);
         aplicacion= (EditText)findViewById(R.id.et_app);
-        resultado=(TextView)findViewById(R.id.et_res);
     }
 
     public void calcular(View view){
@@ -113,12 +112,21 @@ public class MainActivity extends AppCompatActivity {
             double e2= Double.parseDouble(entregable2.getText().toString());
             double sust= Double.parseDouble(sustentacion.getText().toString());
             double app= Double.parseDouble(aplicacion.getText().toString());
-            double corte1= asist1*0.10+tc1*0.30+tt1*0.30+p1*0.30;
-            double corte2= asist2*0.10+tc2*0.30+e1*0.15+e2*0.15+sust*0.15+app*0.15;
 
-            double resultadoSem= (corte1*0.5)+(corte2*0.5);
-            String resultadoMostrar= String.valueOf(resultadoSem);
-            resultado.setText("RESULTADO: "+resultadoMostrar);
+            Definitiva miDefinitiva= new Definitiva(asist1, tt1, tc1,p1,asist2,tc2,sust,app,e1,e2);
+            miDefinitiva.getPrimerCorte();
+            miDefinitiva.getSegundoCorte();
+            //double corte1= asist1*0.10+tc1*0.30+tt1*0.30+p1*0.30;
+           // double corte2= asist2*0.10+tc2*0.30+e1*0.15+e2*0.15+sust*0.15+app*0.15;
+
+            double resultadoSem= miDefinitiva.getDefinitiva();
+
+            String resultadoMostrar= String.valueOf(miDefinitiva);
+            Intent caballoDeTroya = new Intent(MainActivity.this, ResultadoActivity.class);
+            caballoDeTroya.putExtra("res", resultadoSem);
+            caballoDeTroya.putExtra("titulo", "Resultado final");
+            startActivity(caballoDeTroya);
+
         }
 
 
