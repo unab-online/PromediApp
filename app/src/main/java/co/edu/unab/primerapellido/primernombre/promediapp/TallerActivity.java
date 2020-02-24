@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import co.edu.unab.primerapellido.primernombre.promediapp.Definitiva;
 
 public class TallerActivity extends AppCompatActivity  {
 
@@ -70,6 +71,16 @@ public class TallerActivity extends AppCompatActivity  {
                     Toast.makeText(getApplicationContext(),"complete todos los campos", Toast.LENGTH_LONG).show();
 
                 }else{
+
+                    Definitiva miDefinitiva = new Definitiva();
+                    miDefinitiva.setAsistencia1(Double.valueOf(editTextAsistencia1.getText().toString()));
+                    miDefinitiva.setTrabajoClase1(Double.valueOf(editTextTrabajoClase1.getText().toString()));
+                    miDefinitiva.setTrabajosTalleres(Double.valueOf(editTextTrabajosTalleres.getText().toString()));
+                    miDefinitiva.setParcial(Double.valueOf(editTextParcial.getText().toString()));
+                    
+
+
+
                     asis = Double.valueOf(editTextAsistencia1.getText().toString());
                     traClas = Double.valueOf(editTextTrabajoClase1.getText().toString());
                     traTa = Double.valueOf(editTextTrabajosTalleres.getText().toString());
@@ -84,7 +95,11 @@ public class TallerActivity extends AppCompatActivity  {
                     resultado = ((asis*0.1)+(traClas*0.3)+(traTa*0.3)+(par*0.3))*0.5+((asis2*0.1)+(traCla2*0.3)+(priEnt*0.15)+(segEnt*0.15)+(sus*0.15)+(app*0.15))*0.5;
                     //textViewResultado.setText("RESULTADO: "+resultado);
 
-                    Intent miIntension = new Intent(getApplication(),ResultadoActivity.class); //esta la intension de ir a la otra actividad
+                    Intent miIntension = new Intent(getApplication(),ResultadoActivity.class); //esta la intension de ir a la otra actividad, resive la actividad donde está y la clase a donde va
+
+                    miIntension.putExtra("resultado",resultado);
+                    miIntension.putExtra("titulo","Resultado final");
+
                     startActivity(miIntension); //haga la intension
 
                 }
