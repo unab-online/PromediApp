@@ -100,12 +100,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lectura = edtPRC_app.getText().toString();
             appPRC = Double.valueOf(lectura);
 
+            Definitiva midefinitiva = new Definitiva();
+            midefinitiva.setAsitencia1(asisPC);
+            midefinitiva.setTalleres1(TraYTalPC);
+            midefinitiva.setTrabajos1(TraClaPC);
+            midefinitiva.setParcial1(ParciPC);
 
-            resultado = (((asisPC * 0.1) + (TraClaPC * 0.3) + (TraYTalPC * 0.3) + (ParciPC * 0.3)) + ((asisSC * 0.1) + (TraClaSC * 0.3) + (priPRC * 0.15) + (segPRC * 0.15) + (sustPRC * 0.15) + (appPRC * 0.15))) / 2;
+            midefinitiva.setAsistencia2(asisSC);
+            midefinitiva.setTrabajos2(TraClaSC);
+            midefinitiva.setEntregable1(priPRC);
+            midefinitiva.setEntregable1(segPRC);
+            midefinitiva.setEntregable1(sustPRC);
+            midefinitiva.setEntregable1(appPRC);
+
+
+
+
             Toast.makeText(this, "calculando...", Toast.LENGTH_SHORT).show();
-            Resultadomostrar.setText("RESULTADO : " + resultado + "");
 
+
+
+            // pasar a otra actividad //
             Intent intent = new Intent(getApplication() , ResultadoActivity.class);
+
+            intent.putExtra("res", midefinitiva.getDefinitiva());
+            intent.putExtra("titulo", "Resultado final");
+
+
             startActivity(intent);
         }
     }
