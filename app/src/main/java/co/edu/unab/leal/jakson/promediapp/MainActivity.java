@@ -58,31 +58,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCalcular = findViewById(R.id.btn_calcular);
         textViewResultado = findViewById(R.id.textView_resultado);
 
-
-
-        btnCalcular.setOnClickListener(this);
         btnCalcular.setOnClickListener(new View.OnClickListener() {
 
 
             public void onClick(View v) {
 
-               // Toast.makeText(getApplicationContext(), "vamos a calcular", Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), "vamos a calcular", Toast.LENGTH_LONG).show();
 
-                String lectura;
-                double resultado, primerCorte, segundoCorte, proyecto;
+                double resultado = 0.0, primerCorte, segundoCorte, proyecto;
 
-                if (editTextSegEntreg.getText().toString().equals(true) &&
-                        editTextSustentacion.getText().toString().equals(true) &&
-                        editTextAplicacion.getText().toString().equals(true) &&
-                        editTextPrimEntreg.getText().toString().equals(true) &&
-                        editTextTrabClaseSC.getText().toString().equals(true) &&
-                        editTextAsistSC.getText().toString().equals(true) &&
-                        editTextParcial.getText().toString().equals(true) &&
-                        editTextAsistPC.getText().toString().equals(true) &&
-                        editTextTrabClasePC.getText().toString().equals(true) &&
-                        editTextTrabTall.getText().toString().equals(true)
+                if (!editTextSegEntreg.getText().toString().equals("") &&
+                        !editTextSustentacion.getText().toString().equals("") &&
+                        !editTextAplicacion.getText().toString().equals("") &&
+                        !editTextPrimEntreg.getText().toString().equals("") &&
+                        !editTextTrabClaseSC.getText().toString().equals("") &&
+                        !editTextAsistSC.getText().toString().equals("") &&
+                        !editTextParcial.getText().toString().equals("") &&
+                        !editTextAsistPC.getText().toString().equals("") &&
+                        !editTextTrabClasePC.getText().toString().equals("") &&
+                        !editTextTrabTall.getText().toString().equals("")
 
                 ) {
+
+                    String lectura;
 
                     //primer corte ↓↓↓↓↓↓↓
                     double asistenciaPc, trabajoPc, tallerPc, parcial;
@@ -127,14 +125,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     resultado = primerCorte + (segundoCorte + proyecto) * 0.5;
 
-                    textViewResultado.setText("" + resultado);
-                } else {
+                    //textViewResultado.setText("" + resultado);
 
                     Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+                    miIntencion.putExtra("data", resultado);
+                    miIntencion.putExtra("titulo", "resultado final");
                     startActivity(miIntencion);
 
+                } else {
 
-                    //Toast.makeText(getBaseContext(), "Upss, llena todos los campos!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Upss, llena todos los campos!", Toast.LENGTH_LONG).show();
+
                 }
 
             }
