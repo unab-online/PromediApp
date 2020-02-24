@@ -33,37 +33,41 @@ public class TallerActivity extends AppCompatActivity {
         aplicacion = findViewById(R.id.aplicacion);
         calcular = findViewById(R.id.calcular);
 
-        calcular.setOnClickListener(new View.OnClickListener(){
+        calcular.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 if (!isEmpy(asistencia1) && !isEmpy(trabajoclase1) && !isEmpy(trabajostalleres) && !isEmpy(parcial)
                         && !isEmpy(asistencia2) && !isEmpy(trabajoclase2) && !isEmpy(primerentregable) && !isEmpy(segundoentregable)
-                        && !isEmpy(sustentacion) && !isEmpy(aplicacion))
-                {
+                        && !isEmpy(sustentacion) && !isEmpy(aplicacion)) {
                     Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
-                    double corte1 = (getNumber(asistencia1)*0.1)+(getNumber(asistencia2)*0.3)+(getNumber(trabajostalleres)*0.3)+
-                            (getNumber(parcial)*0.3);
-                    Log.d("TEST","Corte 1 " + corte1);
+                    double corte1 = (getNumber(asistencia1) * 0.1) + (getNumber(asistencia2) * 0.3) + (getNumber(trabajostalleres) * 0.3) +
+                            (getNumber(parcial) * 0.3);
+                    Log.d("TEST", "Corte 1 " + corte1);
 
-                    double corte2 = (getNumber(asistencia2)*0.1)+(getNumber(trabajoclase2)*0.3)+(getNumber(primerentregable)*0.15)+
-                            (getNumber(segundoentregable)*0.15)+(getNumber(sustentacion)*0.15)+(getNumber(aplicacion)*0.15);
-                    Log.d("TEST","Corte 2 " + corte2);
-                    double resultado = (corte1*0.5)+(corte2*0.5);
+                    double corte2 = (getNumber(asistencia2) * 0.1) + (getNumber(trabajoclase2) * 0.3) + (getNumber(primerentregable) * 0.15) +
+                            (getNumber(segundoentregable) * 0.15) + (getNumber(sustentacion) * 0.15) + (getNumber(aplicacion) * 0.15);
+                    Log.d("TEST", "Corte 2 " + corte2);
+                    double resultado = (corte1 * 0.5) + (corte2 * 0.5);
 
                     Intent intentResultado = new Intent(getApplication(), ResultadoActivity.class);
+
+                    intentResultado.putExtra("res", resultado);
+                    intentResultado.putExtra("titulo", "Resultado Final");
+
                     startActivity(intentResultado);
-                }else {
+                } else {
                     Toast.makeText(getBaseContext(), "Error: Debe llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
 
         private double getNumber(EditText aux){
             return Double.valueOf(aux.getText().toString());
         }
 
         private boolean isEmpy(EditText aux){
-            return aux.getText().toString().trim().length() == 0;
-    }
+            return aux.getText().toString().isEmpty();
+        }
 }
