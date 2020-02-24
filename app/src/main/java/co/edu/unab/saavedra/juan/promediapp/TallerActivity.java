@@ -80,23 +80,26 @@ public class TallerActivity extends AppCompatActivity {
                 Toast.makeText(this, "Valores incorrectos, los valores deben estar entre 0.0 y 5.0", Toast.LENGTH_LONG).show();
 
             } else {
-                double corte1 = 0;
-                double corte2 = 0;
-                corte1 += notaAsistencia1 * 0.1;
-                corte1 += notaTrabajosClase1 * 0.3;
-                corte1 += notaTrabajosTalleres * 0.3;
-                corte1 += notaParcial * 0.3;
+                Definitiva miDefinitiva = new Definitiva();
 
-                corte2 += notaAsistencia2 * 0.1;
-                corte2 += notaTrabajosClase2 * 0.3;
-                corte2 += notaEntregable1 * 0.15;
-                corte2 += notaEntregable2 * 0.15;
-                corte2 += notaSustentacion * 0.15;
-                corte2 += notaAplicacion * 0.15;
+                miDefinitiva.setAsistencia1(notaAsistencia1);
+                miDefinitiva.setTrabajos1(notaTrabajosClase1);
+                miDefinitiva.setTalleres(notaTrabajosTalleres);
+                miDefinitiva.setParcial(notaParcial);
 
-                double resultado = (corte1+corte2)/2.0;
+                miDefinitiva.setAsistencia2(notaAsistencia2);
+                miDefinitiva.setTrabajos2(notaTrabajosClase2);
+                miDefinitiva.setEntregable1(notaEntregable1);
+                miDefinitiva.setEntregable2(notaEntregable2);
+                miDefinitiva.setSustentacion(notaSustentacion);
+                miDefinitiva.setAplicacion(notaAplicacion);
+
 
                 Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+
+                miIntencion.putExtra("resultado", miDefinitiva.getDefinitiva());
+                miIntencion.putExtra("titulo", "Nota final");
+
                 startActivity(miIntencion);
 
 
