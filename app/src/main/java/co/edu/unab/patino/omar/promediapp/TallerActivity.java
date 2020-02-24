@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TallerActivity extends AppCompatActivity implements View.OnClickListener {
+public class TallerActivity extends AppCompatActivity {
 
     private EditText t1edit_1;
     private EditText t1edit_2;
@@ -49,10 +49,7 @@ public class TallerActivity extends AppCompatActivity implements View.OnClickLis
         t3edit_4 = findViewById(R.id.t3_edit_4);
 
         btncalcular = findViewById(R.id.btn_calcular);
-        Resultado = findViewById(R.id.txt_Resultado);
-
-        Log.d("ESTADO", "Creando actividad...");
-        Toast.makeText(getBaseContext(), "Método OnCreate", Toast.LENGTH_LONG).show();
+        //Resultado = findViewById(R.id.txt_Resultado);
 
         btncalcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,10 +88,26 @@ public class TallerActivity extends AppCompatActivity implements View.OnClickLis
                 Toast.makeText(getBaseContext(), "Cargando...", Toast.LENGTH_LONG).show();
 
                 Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+                miIntencion.putExtra("res", resultadot);
+                miIntencion.putExtra("titulo", "resultado final");
+
                 startActivity(miIntencion);
                 //
 
                 //
+                Definitiva miDefinitiva = new Definitiva();
+                miDefinitiva.setAsistencia1(Double.valueOf(t1edit_1.getText().toString()));
+                miDefinitiva.setTrabajosytalleres1(Double.valueOf(t1edit_3.getText().toString()));
+                miDefinitiva.setTrabajos1(Double.valueOf(t1edit_2.getText().toString()));
+                miDefinitiva.setParcial(Double.valueOf(t1edit_4.getText().toString()));
+
+                miDefinitiva.setAsistencia2(Double.valueOf(t2edit_1.getText().toString()));
+                miDefinitiva.setTrabajos2(Double.valueOf(t1edit_2.getText().toString()));
+
+                miDefinitiva.setEntregable1(Double.valueOf(t3edit_1.getText().toString()));
+                miDefinitiva.setSustentacion(Double.valueOf(t3edit_2.getText().toString()));
+                miDefinitiva.setEntregable2(Double.valueOf(t3edit_3.getText().toString()));
+                miDefinitiva.setAplicacion(Double.valueOf(t3edit_4.getText().toString()));
 
 
             }
@@ -102,8 +115,4 @@ public class TallerActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    @Override
-    public void onClick(View view) {
-
-    }
 }
