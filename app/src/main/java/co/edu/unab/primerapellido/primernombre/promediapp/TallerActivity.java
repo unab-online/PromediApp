@@ -77,27 +77,18 @@ public class TallerActivity extends AppCompatActivity  {
                     miDefinitiva.setTrabajoClase1(Double.valueOf(editTextTrabajoClase1.getText().toString()));
                     miDefinitiva.setTrabajosTalleres(Double.valueOf(editTextTrabajosTalleres.getText().toString()));
                     miDefinitiva.setParcial(Double.valueOf(editTextParcial.getText().toString()));
-                    
+                    miDefinitiva.setAsistencia2(Double.valueOf(editTextAsistencia2.getText().toString()));
+                    miDefinitiva.setTrabajoClase2(Double.valueOf(editTextTrabajoClase2.getText().toString()));
+                    miDefinitiva.setPrimerEntregable(Double.valueOf(editTextPrimerEntregable.getText().toString()));
+                    miDefinitiva.setSegundoEntregable(Double.valueOf(editTextSegundoEntregable.getText().toString()));
+                    miDefinitiva.setSustentacion(Double.valueOf(editTextSustentacion.getText().toString()));
+                    miDefinitiva.setAplicacion(Double.valueOf(editTextAplicacion.getText().toString()));
 
 
-
-                    asis = Double.valueOf(editTextAsistencia1.getText().toString());
-                    traClas = Double.valueOf(editTextTrabajoClase1.getText().toString());
-                    traTa = Double.valueOf(editTextTrabajosTalleres.getText().toString());
-                    par = Double.valueOf(editTextParcial.getText().toString());
-                    asis2 = Double.valueOf(editTextAsistencia2.getText().toString());
-                    traCla2 = Double.valueOf(editTextTrabajoClase2.getText().toString());
-                    priEnt = Double.valueOf(editTextPrimerEntregable.getText().toString());
-                    segEnt = Double.valueOf(editTextSegundoEntregable.getText().toString());
-                    sus = Double.valueOf(editTextSustentacion.getText().toString());
-                    app = Double.valueOf(editTextAplicacion.getText().toString());
-
-                    resultado = ((asis*0.1)+(traClas*0.3)+(traTa*0.3)+(par*0.3))*0.5+((asis2*0.1)+(traCla2*0.3)+(priEnt*0.15)+(segEnt*0.15)+(sus*0.15)+(app*0.15))*0.5;
-                    //textViewResultado.setText("RESULTADO: "+resultado);
 
                     Intent miIntension = new Intent(getApplication(),ResultadoActivity.class); //esta la intension de ir a la otra actividad, resive la actividad donde está y la clase a donde va
 
-                    miIntension.putExtra("resultado",resultado);
+                    miIntension.putExtra("resultado",miDefinitiva.getDefinitiva());
                     miIntension.putExtra("titulo","Resultado final");
 
                     startActivity(miIntension); //haga la intension
