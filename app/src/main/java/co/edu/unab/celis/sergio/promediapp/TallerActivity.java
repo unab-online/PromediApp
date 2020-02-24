@@ -42,42 +42,29 @@ public class TallerActivity extends AppCompatActivity {
     }
 
     public void calcular(View elemento){
-        double primerCorte,segundoCorte;
-        double resultado, asistencia1, clase1,talleres,parcial,asistencia2,clase2,entregable1,entregable2,sustentacion,aplicacion;
-        String lectura;
 
         try {
 
-            lectura = edtAsistencia1.getText().toString();
-            asistencia1 = Double.valueOf(lectura);
-            lectura = edtClase1.getText().toString();
-            clase1 = Double.valueOf(lectura);
-            lectura = edtTalleres.getText().toString();
-            talleres = Double.valueOf(lectura);
-            lectura = edtParcial.getText().toString();
-            parcial = Double.valueOf(lectura);
-            lectura = edtAsistencia2.getText().toString();
-            asistencia2 = Double.valueOf(lectura);
-            lectura = edtClase2.getText().toString();
-            clase2 = Double.valueOf(lectura);
-            lectura = edtEntrgable1.getText().toString();
-            entregable1 = Double.valueOf(lectura);
-            lectura = edtEntregable2.getText().toString();
-            entregable2 = Double.valueOf(lectura);
-            lectura = edtSustentación.getText().toString();
-            sustentacion = Double.valueOf(lectura);
-            lectura = edtAplicacion.getText().toString();
-            aplicacion = Double.valueOf(lectura);
+            Definitiva notaDefinitiva = new Definitiva();
 
-            primerCorte = ((asistencia1*0.1)+(clase1*0.3)+(talleres*0.3)+(parcial*0.3))*0.5;
-            segundoCorte = ((asistencia2*0.1)+(clase2*0.3)+(entregable1*0.15)+(entregable2*0.15)+(sustentacion*0.15)+(aplicacion*0.15))*0.5;
-
-            resultado = primerCorte + segundoCorte;
+            notaDefinitiva.setAsistencia1(Double.valueOf(edtAsistencia1.getText().toString()));
+            notaDefinitiva.setTalleres(Double.valueOf(edtTalleres.getText().toString()));
+            notaDefinitiva.setClase1(Double.valueOf(edtClase1.getText().toString()));
+            notaDefinitiva.setParcial(Double.valueOf(edtParcial.getText().toString()));
+            notaDefinitiva.setAsistencia2(Double.valueOf(edtAsistencia2.getText().toString()));
+            notaDefinitiva.setClase2(Double.valueOf(edtClase2.getText().toString()));
+            notaDefinitiva.setEntregable1(Double.valueOf(edtEntrgable1.getText().toString()));
+            notaDefinitiva.setEntregable2(Double.valueOf(edtEntregable2.getText().toString()));
+            notaDefinitiva.setSustentacion(Double.valueOf(edtSustentación.getText().toString()));
+            notaDefinitiva.setAplicacion(Double.valueOf(edtAplicacion.getText().toString()));
 
             Intent mostrarResultado = new Intent(getApplication(), ResultadoActivity.class);
+            mostrarResultado.putExtra("res", notaDefinitiva.getDefinitiva());
+            mostrarResultado.putExtra("titulo", "Resultado Final");
             startActivity(mostrarResultado);
 
             Toast.makeText(this, "Calculando Promedio",Toast.LENGTH_LONG).show();
+
         }
 
         catch (Exception error){
