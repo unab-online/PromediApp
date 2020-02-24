@@ -87,12 +87,24 @@ public class TallerActivity extends AppCompatActivity {
                     Toast.makeText(getApplication(),"Actividades vacías "+aviso ,Toast.LENGTH_LONG).show();
                 }
                 else{
-                    resultado1 = Double.valueOf(inputasist1.getText().toString()) * 0.1 + Double.valueOf(inputtrabClas1.getText().toString()) * 0.3 + Double.valueOf(inputparcial.getText().toString()) * 0.3 + Double.valueOf(inputtrabytaller.getText().toString()) * 0.3;
-                    resultado21 = Double.valueOf(inputasist2.getText().toString()) * 0.1 + Double.valueOf(inputtrabClas2.getText().toString()) * 0.3;
-                    resultado22 = Double.valueOf(inputprentregable.getText().toString()) * 0.15 + Double.valueOf(inputsegentregable.getText().toString()) * 0.15 +  Double.valueOf(inputapp.getText().toString()) * 0.15 +  Double.valueOf(inputsust.getText().toString()) * 0.15;
-                    resultado = resultado1*0.5+((resultado21+resultado22)*0.5);
+                    Definitiva miDefinitiva = new Definitiva();
+
+                    miDefinitiva.setAsistencia1(Double.valueOf(inputasist1.getText().toString()));
+                    miDefinitiva.setTalleres(Double.valueOf(inputtrabytaller.getText().toString()));
+                    miDefinitiva.setTrabajos1(Double.valueOf(inputtrabClas1.getText().toString()));
+                    miDefinitiva.setParcial(Double.valueOf(inputparcial.getText().toString()));
+                    miDefinitiva.setAsistencia2(Double.valueOf(inputasist2.getText().toString()));
+                    miDefinitiva.setTrabajos2(Double.valueOf(inputtrabClas2.getText().toString()));
+                    miDefinitiva.setEntregable1(Double.valueOf(inputprentregable.getText().toString()));
+                    miDefinitiva.setEntregable2(Double.valueOf(inputsegentregable.getText().toString()));
+                    miDefinitiva.setSustentacion(Double.valueOf(inputsust.getText().toString()));
+                    miDefinitiva.setAplicacion(Double.valueOf(inputapp.getText().toString()));
 
                     Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
+
+                    miIntencion.putExtra("res", miDefinitiva.getDefinitiva());
+                    miIntencion.putExtra("titulo", "Resultado final");
+
                     startActivity(miIntencion);
                 }
 
