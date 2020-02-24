@@ -37,10 +37,8 @@ private TextView txtresultado;
         txtEntregable2 = findViewById(R.id.edt_entregable2);
         txtSustentacion = findViewById(R.id.edt_sustentacion);
         txtAplicacion = findViewById(R.id.edt_app);
-
         btnCalcular = findViewById(R.id.btn_calc);
-
-        txtresultado = findViewById(R.id.txt_resultado); //faltaba llamar este...
+        txtresultado = findViewById(R.id.txt_resultado);
 
     }
 
@@ -78,15 +76,32 @@ private TextView txtresultado;
         leer = txtAplicacion.getText().toString();
         aplicacion = Double.valueOf(leer);
 
-        if (asistencia1 >= 0 && trabClase1 >= 0 && talleres >= 0 && parcial >= 0 && asistencia2 >= 0 && trabClase2 >= 0 && entregable1 >=0 && entregable2 >= 0 && sustentacion >= 0 && aplicacion >= 0){
-            corte1 = (((asistencia1*0.1)+(trabClase1*0.3)+(talleres*0.3)+(parcial*0.3))*0.5);
+        if (asistencia1 >= 0 && trabClase1 >= 0 && talleres >= 0 && parcial >= 0 && asistencia2 >= 0 && trabClase2 >= 0 && entregable1 >=0 && entregable2 >= 0 && sustentacion >= 0 && aplicacion >= 0) {
+
+            Definitiva miDefinitiva = new Definitiva();
+
+            miDefinitiva.setAsistencia1(Double.valueOf(txtAsistencia1.getText().toString())); //Una forma para ahorrar líneas de código
+            miDefinitiva.setAsistencia1(trabClase1);
+            miDefinitiva.setAsistencia1(talleres);
+            miDefinitiva.setAsistencia1(parcial);
+            miDefinitiva.setAsistencia1(asistencia2);
+            miDefinitiva.setAsistencia1(trabClase2);
+            miDefinitiva.setAsistencia1(entregable1);
+            miDefinitiva.setAsistencia1(entregable2);
+            miDefinitiva.setAsistencia1(sustentacion);
+            miDefinitiva.setAsistencia1(aplicacion);
+
+
+
+           /* corte1 = (((asistencia1*0.1)+(trabClase1*0.3)+(talleres*0.3)+(parcial*0.3))*0.5);
             corte2 = (((asistencia2*0.1)+(trabClase2*0.3)+(entregable1*0.15)+(entregable2*0.15)+(sustentacion*0.15)+(aplicacion*0.15))*0.5);
             resultado = corte1+corte2;
-            //txtresultado.setText("El resultado es: "+ resultado);
+            //txtresultado.setText("El resultado es: "+ resultado);*/
 
-            Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class );
-            startActivity(miIntencion);
-
+            Intent cambiarActividad = new Intent(getApplication(), ResultadoActivity.class );
+            //cambiarActividad.putExtra("resul",resultado);
+            cambiarActividad.putExtra("resul",miDefinitiva.getDefinitiva());
+            startActivity(cambiarActividad);
 
 
         }else{
