@@ -1,0 +1,19 @@
+<resources>
+    <string name="PrimerTaller_Christian">PromediApp</string>
+    <string name="textView4">PromediApp</string>
+    <string name="textView5">Primer Corte(50%)</string>
+    <string name="textView7">Segundo Corte(50%)</string>
+    <string name="textView11">Proyecto Curso 60%</string>
+    <string name="editText5">Asistencia 10%</string>
+    <string name="editText6">Trabajos y Talleres 30%</string>
+    <string name="editText7">Trabajo en clase 30%</string>
+    <string name="editText8">Parcial 30%</string>
+    <string name="editText9">Asistencia 10%</string>
+    <string name="editText12">Trabajo en clase 30%</string>
+    <string name="editText14">Primer Entregable 15%</string>
+    <string name="editText15">Sustentación 15%</string>
+    <string name="editText18">Segundo Entregable 15%</string>
+    <string name="editText19">Aplicación 15%</string>
+    <string name="textView12">Resultado</string>
+    <string name="button4">Calcular</string>
+</resources>
