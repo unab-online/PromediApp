@@ -59,12 +59,11 @@ public class TallerActivity extends AppCompatActivity {
             notaDefinitiva.setAplicacion(Double.valueOf(edtAplicacion.getText().toString()));
 
             Intent mostrarResultado = new Intent(getApplication(), ResultadoActivity.class);
-            mostrarResultado.putExtra("res", notaDefinitiva.getDefinitiva());
+            mostrarResultado.putExtra("res", notaDefinitiva);
             mostrarResultado.putExtra("titulo", "Resultado Final");
             startActivity(mostrarResultado);
 
             Toast.makeText(this, "Calculando Promedio",Toast.LENGTH_LONG).show();
-
         }
 
         catch (Exception error){
