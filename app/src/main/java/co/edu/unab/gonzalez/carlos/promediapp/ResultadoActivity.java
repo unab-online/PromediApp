@@ -19,11 +19,20 @@ public class ResultadoActivity extends AppCompatActivity {
         btnvolver = findViewById(R.id.btnvolver);
 
         Bundle misDatos = getIntent().getExtras();
-        double resul = misDatos.getDouble("resultado",0.0);
+        //para double
+        //double resul = misDatos.getDouble("resultado",0.0);
+
+        //para objeto por serializable
+        Definitiva resul = (Definitiva) misDatos.getSerializable("resultado");
+
+        //-----------------------------------------
         String titulo = misDatos.getString("titulo", "");
+
         setContentView(R.layout.activity_resultado);
+
         resultado = findViewById(R.id.txvres);
-        resultado.setText(""+resul+"");
+
+        resultado.setText(""+resul.getDefinitiva()+"");
 
 
     }

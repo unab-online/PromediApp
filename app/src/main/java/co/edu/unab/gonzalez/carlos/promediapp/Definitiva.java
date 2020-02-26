@@ -1,6 +1,8 @@
 package co.edu.unab.gonzalez.carlos.promediapp;
 
-public class Definitiva {
+import java.io.Serializable;
+
+public class Definitiva implements Serializable {
     private double asistencia1;
     private double talleres;
     private double trabajos1;
