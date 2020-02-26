@@ -102,7 +102,7 @@ public class TallerActivity extends AppCompatActivity {
 
                     Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
 
-                    miIntencion.putExtra("res", miDefinitiva.getDefinitiva());
+                    miIntencion.putExtra("objeto", miDefinitiva);
                     miIntencion.putExtra("titulo", "Resultado final");
 
                     startActivity(miIntencion);
