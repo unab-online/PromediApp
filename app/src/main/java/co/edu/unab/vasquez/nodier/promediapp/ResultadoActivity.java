@@ -14,12 +14,14 @@ public class ResultadoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Bundle misDatos = getIntent().getExtras();
-        double resultado = misDatos.getDouble("resul",0.0);
+        //double resultado = misDatos.getDouble("resul",0.0);
 
+        Definitiva miDefinitiva = (Definitiva) misDatos.getSerializable("objeto");
         setContentView(R.layout.activity_resultado);
 
         txResultado = findViewById(R.id.tx_result);
-        txResultado.setText("El resultado es: "+resultado);
+        //txResultado.setText("El resultado es: "+resultado);
+        txResultado.setText(""+miDefinitiva.getDefinitiva());
 
     }
 }

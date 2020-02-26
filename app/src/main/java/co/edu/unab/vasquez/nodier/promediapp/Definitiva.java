@@ -1,17 +1,19 @@
 package co.edu.unab.vasquez.nodier.promediapp;
 
-public class Definitiva {
+import java.io.Serializable;
 
-    private Double asistencia1;
-    private Double trabajoClase1;
-    private Double talleres;
-    private Double parcial;
-    private Double asistencia2;
-    private Double trabajoClase2;
-    private Double entregable1;
-    private Double entregable2;
-    private Double sustentacion;
-    private Double aplicacion;
+public class Definitiva implements Serializable {
+
+    private double asistencia1;
+    private double trabajoClase1;
+    private double talleres;
+    private double parcial;
+    private double asistencia2;
+    private double trabajoClase2;
+    private double entregable1;
+    private double entregable2;
+    private double sustentacion;
+    private double aplicacion;
 
     public double getPrimerCorte(){
         return this.asistencia1*0.1+this.trabajoClase1*0.3+this.talleres*0.3+this.parcial*0.3;
@@ -24,6 +26,7 @@ public class Definitiva {
     public double getDefinitiva(){
         return this.getPrimerCorte()*0.5+this.getSegundoCorte()*0.5;
     }
+
 
     public Double getAsistencia1() {
         return asistencia1;
