@@ -11,6 +11,8 @@ import android.widget.TextView;
 public class ResultadoActivity extends AppCompatActivity {
     private Button btnvolver;
     private TextView resultado;
+    private TextView rpc;
+    private TextView rsc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +33,12 @@ public class ResultadoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resultado);
 
         resultado = findViewById(R.id.txvres);
+        rpc = findViewById(R.id.txvpc);
+        rsc = findViewById(R.id.txvsc);
 
         resultado.setText(""+resul.getDefinitiva()+"");
+        rpc.setText("Primer corte"+resul.getPrimercorte());
+        rsc.setText("Segundo corte"+resul.getSegundocorte());
 
 
     }
