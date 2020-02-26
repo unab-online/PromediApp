@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 if(validacion()){
 
                     Intent intent= new Intent(MainActivity.this,ResultadoActivity.class);
-                    intent.putExtra(EXTRAMESSAGE, definitiva.toString());
+                    intent.putExtra(EXTRAMESSAGE, definitiva);
                     startActivity(intent);
 
                 }

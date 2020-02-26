@@ -1,6 +1,8 @@
 package co.edu.unab.Hernandez.Yeison.promediapp;
 
-public class Definitiva {
+import java.io.Serializable;
+
+public class Definitiva implements Serializable {
     private double asistenciaUno,talleres,trabajosUno,pacial,asistenciaDos,trabajosDos,sustentacon,aplicacion,entregableUno,entregableDos;
 
     public double getAsistenciaUno() {

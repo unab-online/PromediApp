@@ -13,9 +13,9 @@ public class ResultadoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRAMESSAGE);
+        Definitiva definitiva= (Definitiva)intent.getSerializableExtra(MainActivity.EXTRAMESSAGE);
         textView= (TextView) findViewById(R.id.textResultado);
-        textView.setText("Resultado es: "+message);
+        textView.setText("Resultado es: "+definitiva.toString());
 
     }
 }
