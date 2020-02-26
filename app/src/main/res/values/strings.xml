@@ -15,6 +15,8 @@
     <string name="name_sustentacion">Sustentacion 15%</string>
     <string name="name_aplicacion">Aplicacion 15%</string>
     <string name="name_calcular">CALCULAR</string>
-    <string name="name_resultado">resultado: </string>
+    <string name="name_resultado_final">resultado final: </string>
+    <string name="name_resultado_pc">resultado primer corte: </string>
+    <string name="name_resultado_sc">resultado segundo corte: </string>
 
 </resources>

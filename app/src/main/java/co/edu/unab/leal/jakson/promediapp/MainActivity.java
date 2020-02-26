@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     resultado = definitivaObj.primerCorte() + definitivaObj.segundoCorte();
 
                     Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
-                    miIntencion.putExtra("data", resultado);
+                    miIntencion.putExtra("objeto", definitivaObj);
                     miIntencion.putExtra("titulo", "resultado final");
                     startActivity(miIntencion);
 

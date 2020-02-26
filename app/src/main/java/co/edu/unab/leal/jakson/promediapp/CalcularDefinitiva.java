@@ -1,8 +1,8 @@
 package co.edu.unab.leal.jakson.promediapp;
 
-import android.util.Log;
+import java.io.Serializable;
 
-public class CalcularDefinitiva {
+public class CalcularDefinitiva implements Serializable {
 
     private double asistenciaPC, trabajoClasePC, trabajosTalleres, parcial;
 
