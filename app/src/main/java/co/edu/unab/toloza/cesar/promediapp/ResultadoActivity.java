@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class ResultadoActivity extends AppCompatActivity {
 
-    private TextView textResultado, textTitulo;
+    private TextView textResultado, textTitulo, textPrimerCorte, textSegundoCorte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,14 +16,17 @@ public class ResultadoActivity extends AppCompatActivity {
 
         textResultado = findViewById(R.id.text_resultado_final);
         textTitulo = findViewById(R.id.text_titulo_final);
+        textPrimerCorte = findViewById(R.id.textPrimerCorte);
+        textSegundoCorte = findViewById(R.id.textSegundoCorte);
 
         Bundle misDatos = getIntent().getExtras();
 
-        double resultado = misDatos.getDouble("res");
+        Definitiva resultado = (Definitiva) misDatos.getSerializable("objeto");
         String titulo = misDatos.getString("titulo");
 
-
         textTitulo.setText(titulo);
-        textResultado.setText("RESULTADO: " + resultado);
+        textPrimerCorte.setText("Primer Corte: " + resultado.getPrimerCorte());
+        textSegundoCorte.setText("Segundo Corte: " + resultado.getSegundoCorte());
+        textResultado.setText("RESULTADO: " + resultado.getDefinitiva());
     }
 }

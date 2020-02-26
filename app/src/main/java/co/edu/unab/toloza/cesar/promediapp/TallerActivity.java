@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TallerActivity extends AppCompatActivity {
+public class TallerActivity extends AppCompatActivity{
 
     private EditText corte1Asistencia, corte1TrabajoClase, corte1TrabajoTalleres, corte1Parcial,
             corte2Asistencia, corte2TrabajoClase, corte2Entregable1, corte2Entregable2, corte2Sustentacion, corte2Aplicacion;
@@ -65,8 +65,9 @@ public class TallerActivity extends AppCompatActivity {
                     definitiva.setAplicacion(getNumber(corte2Aplicacion));
                     definitiva.setSustentacion(getNumber(corte2Sustentacion));
 
+
                     Intent intentResultado = new Intent(getApplication(), ResultadoActivity.class);
-                    intentResultado.putExtra("res", definitiva.getDefinitiva());
+                    intentResultado.putExtra("objeto", definitiva);
                     intentResultado.putExtra("titulo", "Resultado Final");
                     startActivity(intentResultado);
                 }else {
