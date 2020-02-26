@@ -41,20 +41,23 @@ public class TallerActivity extends AppCompatActivity {
                         && !isEmpy(asistencia2) && !isEmpy(trabajoclase2) && !isEmpy(primerentregable) && !isEmpy(segundoentregable)
                         && !isEmpy(sustentacion) && !isEmpy(aplicacion)) {
                     Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
-                    double corte1 = (getNumber(asistencia1) * 0.1) + (getNumber(asistencia2) * 0.3) + (getNumber(trabajostalleres) * 0.3) +
-                            (getNumber(parcial) * 0.3);
-                    Log.d("TEST", "Corte 1 " + corte1);
 
-                    double corte2 = (getNumber(asistencia2) * 0.1) + (getNumber(trabajoclase2) * 0.3) + (getNumber(primerentregable) * 0.15) +
-                            (getNumber(segundoentregable) * 0.15) + (getNumber(sustentacion) * 0.15) + (getNumber(aplicacion) * 0.15);
-                    Log.d("TEST", "Corte 2 " + corte2);
-                    double resultado = (corte1 * 0.5) + (corte2 * 0.5);
+                    Definitiva definitiva = new Definitiva();
+
+                    definitiva.setAsistencia1(getNumber(asistencia1));
+                    definitiva.setTrabajoclase1(getNumber(trabajoclase1));
+                    definitiva.setTrabajostalleres(getNumber(trabajostalleres));
+                    definitiva.setParcial(getNumber(parcial));
+                    definitiva.setAsistencia2(getNumber(asistencia2));
+                    definitiva.setTrabajoclase2(getNumber(trabajoclase2));
+                    definitiva.setPrimerentregable(getNumber(primerentregable));
+                    definitiva.setSegundoentregable(getNumber(segundoentregable));
+                    definitiva.setSustentacion(getNumber(sustentacion));
+                    definitiva.setAplicacion(getNumber(aplicacion));
 
                     Intent intentResultado = new Intent(getApplication(), ResultadoActivity.class);
-
-                    intentResultado.putExtra("res", resultado);
+                    intentResultado.putExtra("res", definitiva.getDefinitiva());
                     intentResultado.putExtra("titulo", "Resultado Final");
-
                     startActivity(intentResultado);
                 } else {
                     Toast.makeText(getBaseContext(), "Error: Debe llenar todos los campos", Toast.LENGTH_SHORT).show();
