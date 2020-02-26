@@ -1,6 +1,8 @@
 package co.edu.unab.Martinez.Andrea.promediapp;
 
-public class Definitiva {
+import java.io.Serializable;
+
+public class Definitiva implements Serializable {
 
     private double asistencia1;
     private double talleres;
@@ -110,4 +112,6 @@ public class Definitiva {
         double dos = this.asistencia2*0.1 + this.trabajos2*0.3 + this.entregable1*0.15 + this.entregable2*0.15 + this.sustentacion*0.15 + this.aplicacion*0.15;
         return dos;
     }
+
+
 }
