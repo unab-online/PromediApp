@@ -28,6 +28,8 @@ public class TallerActivity extends AppCompatActivity  {
 
     private Button buttonCalcular;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +90,7 @@ public class TallerActivity extends AppCompatActivity  {
 
                     Intent miIntension = new Intent(getApplication(),ResultadoActivity.class); //esta la intension de ir a la otra actividad, resive la actividad donde está y la clase a donde va
 
-                    miIntension.putExtra("resultado",miDefinitiva.getDefinitiva());
+                    miIntension.putExtra("objeto",miDefinitiva);
                     miIntension.putExtra("titulo","Resultado final");
 
                     startActivity(miIntension); //haga la intension

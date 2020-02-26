@@ -1,6 +1,8 @@
 package co.edu.unab.primerapellido.primernombre.promediapp;
 
-public class Definitiva {
+import java.io.Serializable;
+
+public class Definitiva implements Serializable {
 
     private Double asistencia1;
     private Double trabajoClase1;
