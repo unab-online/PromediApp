@@ -97,7 +97,7 @@ public class TallerActivity extends AppCompatActivity {
 
                 Intent miIntencion = new Intent(getApplication(), ResultadoActivity.class);
 
-                miIntencion.putExtra("resultado", miDefinitiva.getDefinitiva());
+                miIntencion.putExtra("resultado", miDefinitiva);
                 miIntencion.putExtra("titulo", "Nota final");
 
                 startActivity(miIntencion);

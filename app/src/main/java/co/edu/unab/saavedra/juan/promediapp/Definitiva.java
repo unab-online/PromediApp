@@ -1,6 +1,8 @@
 package co.edu.unab.saavedra.juan.promediapp;
 
-public class Definitiva {
+import java.io.Serializable;
+
+public class Definitiva implements Serializable {
 
     private double asistencia1;
     private double talleres;
@@ -117,6 +119,6 @@ public class Definitiva {
         corte2 += this.entregable2 * 0.15;
         corte2 += this.sustentacion * 0.15;
         corte2 += this.aplicacion * 0.15;
-        return 0.0;
+        return corte2;
     }
 }
