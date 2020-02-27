@@ -15,18 +15,21 @@ public class Definitiva implements Serializable {
     private double sustentacion;
     private double aplicacion;
 
+
+
+
     public double getPrimerCorte(){
-        return this.asistencia1*0.1+this.trabajoClase1*0.3+this.talleres*0.3+this.parcial*0.3;
+        return (this.asistencia1*0.1)+(this.trabajoClase1*0.3)+(this.talleres*0.3)+(this.parcial*0.3);
     }
 
     public double getSegundoCorte(){
-        return this.asistencia2*0.1+this.trabajoClase2*0.3+this.entregable1*0.15+this.entregable2*0.15+this.sustentacion*0.15+this.aplicacion*0.15;
+        return (this.asistencia2*0.1)+(this.trabajoClase2*0.3)+(this.entregable1*0.15)+(this.entregable2*0.15)+(this.sustentacion*0.15)+(this.aplicacion*0.15);
     }
 
-    public double getDefinitiva(){
-        return this.getPrimerCorte()*0.5+this.getSegundoCorte()*0.5;
+    public double Resultado() {
+        double resultado=this.getPrimerCorte()*0.5+this.getSegundoCorte()*0.5;
+        return resultado;
     }
-
 
     public Double getAsistencia1() {
         return asistencia1;
@@ -42,10 +45,11 @@ public class Definitiva implements Serializable {
         this.trabajoClase1 = trabajoClase1;
     }
 
-    public Double getTaller() {
+    public double getTalleres() {
         return talleres;
     }
-    public void setTaller(Double taller) {
+
+    public void setTalleres(double talleres) {
         this.talleres = talleres;
     }
 

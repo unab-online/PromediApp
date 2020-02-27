@@ -21,7 +21,7 @@ public class ResultadoActivity extends AppCompatActivity {
 
         txResultado = findViewById(R.id.tx_result);
         //txResultado.setText("El resultado es: "+resultado);
-        txResultado.setText(""+miDefinitiva.getDefinitiva());
+        txResultado.setText(""+miDefinitiva.Resultado());
 
     }
 }

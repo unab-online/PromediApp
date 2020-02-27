@@ -112,16 +112,17 @@ private TextView txtresultado;
         if(cont == 0){
             Definitiva miDefinitiva = new Definitiva();
 
-            miDefinitiva.setAsistencia1(Double.valueOf(txtAsistencia1.getText().toString())); //Una forma para ahorrar líneas de código
-            miDefinitiva.setAsistencia1(trabClase1);
-            miDefinitiva.setAsistencia1(talleres);
-            miDefinitiva.setAsistencia1(parcial);
-            miDefinitiva.setAsistencia1(asistencia2);
-            miDefinitiva.setAsistencia1(trabClase2);
-            miDefinitiva.setAsistencia1(entregable1);
-            miDefinitiva.setAsistencia1(entregable2);
-            miDefinitiva.setAsistencia1(sustentacion);
-            miDefinitiva.setAsistencia1(aplicacion);
+            //miDefinitiva.setAsistencia1(Double.valueOf(txtAsistencia1.getText().toString())); //Una forma para ahorrar líneas de código
+            miDefinitiva.setAsistencia1(asistencia1);
+            miDefinitiva.setTrabajoClase1(trabClase1);
+            miDefinitiva.setTalleres(talleres);
+            miDefinitiva.setParcial(parcial);
+            miDefinitiva.setAsistencia2(asistencia2);
+            miDefinitiva.setTrabajoClase2(trabClase2);
+            miDefinitiva.setEntregable1(entregable1);
+            miDefinitiva.setEntregable2(entregable2);
+            miDefinitiva.setSustentacion(sustentacion);
+            miDefinitiva.setAplicacion(aplicacion);
 
             Intent cambiarActividad = new Intent(getApplication(), ResultadoActivity.class );
             //cambiarActividad.putExtra("resul",resultado);
@@ -131,8 +132,6 @@ private TextView txtresultado;
         }else{
             Toast.makeText(getApplication(),"Hay campos vacíos",Toast.LENGTH_SHORT).show();
         }
-
-
 
 
         /*if (asistencia1 >= 0 && trabClase1 >= 0 && talleres >= 0 && parcial >= 0 && asistencia2 >= 0 && trabClase2 >= 0 && entregable1 >=0 && entregable2 >= 0 && sustentacion >= 0 && aplicacion >= 0) {
@@ -149,8 +148,6 @@ private TextView txtresultado;
             miDefinitiva.setAsistencia1(entregable2);
             miDefinitiva.setAsistencia1(sustentacion);
             miDefinitiva.setAsistencia1(aplicacion);
-
-
 
            *//* corte1 = (((asistencia1*0.1)+(trabClase1*0.3)+(talleres*0.3)+(parcial*0.3))*0.5);
             corte2 = (((asistencia2*0.1)+(trabClase2*0.3)+(entregable1*0.15)+(entregable2*0.15)+(sustentacion*0.15)+(aplicacion*0.15))*0.5);
